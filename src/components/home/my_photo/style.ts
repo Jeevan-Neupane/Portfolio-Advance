@@ -11,6 +11,6 @@ export const ImageDiv = styled.div`
   top: 40px;
   display: block !important;
   position: fixed !important;
-  background-image: url('https://tunis-wp.ibthemespro.com/light-version/wp-content/uploads/2023/10/hero-area.jpg');
+  background-image: url('https://res.cloudinary.com/chatappjeevanneupane/image/upload/v1727568629/j6svc44ubtxarjicgrvb.jpg');
     width: 35%;
 `

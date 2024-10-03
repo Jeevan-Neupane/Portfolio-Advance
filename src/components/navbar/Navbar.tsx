@@ -8,11 +8,11 @@ import Navitems from "./Navitems";
 
 const Navbar = () => {
   const NavItems = [
-    { to: "home", name: "Home", Icon: FaHome },
-    { to: "about", name: "About", Icon: IoPersonSharp },
-    { to: "work", name: "Work", Icon: FaSuitcase },
+    { to: "", name: "Home", Icon: FaHome },
+    { to: "about_me", name: "About", Icon: IoPersonSharp },
+    { to: "works", name: "Work", Icon: FaSuitcase },
     { to: "contact", name: "Contact", Icon: MdEmail },
-    { to: "blog", name: "Blog", Icon: FaPen },
+    { to: "blogs", name: "Blog", Icon: FaPen },
   ];
   return (
     <MenuHeader>
