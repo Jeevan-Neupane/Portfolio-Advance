@@ -1,11 +1,11 @@
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import {
-  IconDiv,
-  MoreAboutButton,
+
   NameRoleDiv,
   ProfileDiv,
   TextDiv,
 } from "./style";
+import Button from "../../../reusable_components/button/Button";
 
 const Intro = () => {
   return (
@@ -16,17 +16,16 @@ const Intro = () => {
       </NameRoleDiv>
 
       <ProfileDiv>
-        I'm a Nepal based web designer & front‑end developer focused on
-        crafting clean & user‑friendly experiences, I am passionate about
-        building excellent software that improves the lives of those around me.
+        I'm a Nepal based web designer & front‑end developer focused on crafting
+        clean & user‑friendly experiences, I am passionate about building
+        excellent software that improves the lives of those around me.
       </ProfileDiv>
 
-      <MoreAboutButton to='/about'>
-        <span>More About Me</span>
-        <IconDiv>
-          <FaRegArrowAltCircleRight />
-        </IconDiv>
-      </MoreAboutButton>
+      <Button
+        to='/about'
+        text='More About Me'
+        icon={<FaRegArrowAltCircleRight />}
+      />
     </TextDiv>
   );
 };

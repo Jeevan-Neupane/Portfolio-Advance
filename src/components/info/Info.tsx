@@ -66,6 +66,7 @@ const Info = () => {
                     />
                   ))}
                 </RightInfoListContainer>
+                
               </LeftInfoContainer>
             </InfoContainerDiv>
           </LeftInfoDiv>
