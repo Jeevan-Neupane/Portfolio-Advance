@@ -4,11 +4,14 @@ import {
   ContactpageSecion,
   InfoDiv,
   LeftContactContainer,
+  RightContactContainer,
 } from "./style";
 import Title from "../../reusable_components/title/Title";
 import SmallTitle from "../../reusable_components/small_title/SmallTitle";
 import ContactInfo from "../../reusable_components/contact_info/ContactInfo";
 import MyContactInfo from "../../data/Contact_info";
+import Form from "../../components/form/Form";
+import Social_Media from "../../components/social_media_icons/Social_Media";
 const Contactpage = () => {
   return (
     <ContactpageSecion>
@@ -42,7 +45,12 @@ const Contactpage = () => {
               );
             })}
           </ContactInfoDiv>
+          <Social_Media />
         </LeftContactContainer>
+
+        <RightContactContainer>
+          <Form />
+        </RightContactContainer>
       </ContactContainer>
     </ContactpageSecion>
   );
