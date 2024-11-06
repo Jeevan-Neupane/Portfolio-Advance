@@ -8,6 +8,9 @@ import Aboutpage from "./pages/about/Aboutpage";
 import Projectpage from "./pages/project/Projectpage";
 import Contactpage from "./pages/contact/Contactpage";
 import Blogpage from "./pages/blog/Blogpage";
+import WebProjects from "./components/projects/WebProjects";
+import AIProjects from "./components/projects/AIProjects";
+import CollegeProjects from "./components/projects/CollegeProject";
 
 function App() {
   const router = createBrowserRouter([
@@ -26,6 +29,20 @@ function App() {
         {
           path: "/works",
           element: <Projectpage />,
+          children: [
+            {
+              path: "/works/web",
+              element: <WebProjects />,
+            },
+            {
+              path: "/works/ai_ml",
+              element: <AIProjects />,
+            },
+            {
+              path: "/works/college",
+              element: <CollegeProjects />,
+            },
+          ],
         },
         {
           path: "/blogs",

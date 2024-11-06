@@ -13,11 +13,15 @@ const MediumArticles = () => {
 
   console.log(articles);
 
+  if (articles.length === 0) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <div>
-     <h1>Medium Articles</h1>
+      <h1>Medium Articles</h1>
 
-     {articles.map((post: any) => {
+      {articles?.map((post: any) => {
         return (
           <BlogPost
             title={post.title}
@@ -25,7 +29,6 @@ const MediumArticles = () => {
             link={post.link}
             author={post.author}
             imageUrl={post.thumbnail}
-            
             description={post.description}
           />
         );

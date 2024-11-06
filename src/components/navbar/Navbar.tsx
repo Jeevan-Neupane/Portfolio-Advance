@@ -10,7 +10,7 @@ const Navbar = () => {
   const NavItems = [
     { to: "", name: "Home", Icon: FaHome },
     { to: "about_me", name: "About", Icon: IoPersonSharp },
-    { to: "works", name: "Work", Icon: FaSuitcase },
+    { to: "works/web", name: "Work", Icon: FaSuitcase },
     { to: "contact", name: "Contact", Icon: MdEmail },
     { to: "blogs", name: "Blog", Icon: FaPen },
   ];

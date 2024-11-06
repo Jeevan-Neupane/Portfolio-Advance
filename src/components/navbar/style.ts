@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 
 export const MenuHeader = styled.div``
 
@@ -46,17 +47,12 @@ export const MenuItem = styled.li`
         opacity: 1;
     }
 
+
+    &.active {
+    background-color: ${(props) => props.theme.specialColor};
+    color: white;
+  }
     
-
-`
-
-
-export const MenuLink = styled(Link)`
-list-style: none;
-text-align: center;
-color:${props => props.theme.lighttextColor};
-
-
 
 `
 
@@ -80,3 +76,34 @@ export const MenuName = styled.span`
     
    
 `
+
+export const MenuLink = styled(NavLink)`
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: ${(props) => props.theme.lightBackground};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${(props) => props.theme.lighttextColor};
+  text-decoration: none;
+  font-size: 2rem;
+  transition: 0.3s;
+
+  &:hover{
+    background-color:${props => props.theme.specialColor};
+  }
+
+  &.active {
+    background-color: ${(props) => props.theme.specialColor};
+    color: white;
+  }
+
+  /* Target the sibling MenuName when MenuLink is active */
+  &.active + ${MenuName} {
+    background-color: ${(props) => props.theme.specialColor};
+    color: white;
+    opacity: 1;
+    right: 3rem;
+  }
+`;
