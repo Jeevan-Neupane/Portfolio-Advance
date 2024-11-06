@@ -3,11 +3,8 @@ import styled from "styled-components";
 
 export const SingleProjectWrapper = styled.div`
 
-width:30rem;
 border-radius:1rem;
-margin-left:10rem;
 padding:1rem;
-margin-bottom:2rem;
 border:1px solid ${props => props.theme.borderColor}; 
 `
 
