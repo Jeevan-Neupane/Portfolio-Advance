@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -104,10 +105,14 @@ text-align:justify;
 
 export const Description = styled.p`
 color:${props => props.theme.lighttextColor};
+height:8rem;
+padding:1rem;
 `
 
-export const ExpoloreButtonDiv = styled.div`
+export const ExpoloreButtonDiv = styled(Link)`
 margin-top:1rem;
+text-decoration:none;
+display:block;
 `
 
 export const ExpoloreButton = styled.button``

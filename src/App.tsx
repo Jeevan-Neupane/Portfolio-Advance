@@ -11,6 +11,7 @@ import Blogpage from "./pages/blog/Blogpage";
 import WebProjects from "./components/projects/WebProjects";
 import AIProjects from "./components/projects/AIProjects";
 import CollegeProjects from "./components/projects/CollegeProject";
+import SingleProjectPage from "./pages/singleProjectPage/SingleProjectPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -51,6 +52,10 @@ function App() {
         {
           path: "/contact",
           element: <Contactpage />,
+        },
+        {
+          path: "/works/:projectType/:projectName",
+          element: <SingleProjectPage />,
         },
       ],
     },

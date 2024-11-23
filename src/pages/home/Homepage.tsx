@@ -1,4 +1,4 @@
-import Intro from "../../components/home/intro_home/Intro";
+  import Intro from "../../components/home/intro_home/Intro";
 import MyImage from "../../components/home/my_photo/MyImage";
 import { ColorBlock, HomeContainerDetails, IntroDiv } from "./style";
 

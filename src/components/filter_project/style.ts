@@ -23,6 +23,7 @@ export const FilterButton = styled.button<FilterButtonProps>`
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size:1.2rem;
 
   &:hover {
     background-color: ${(props) => props.theme.specialColor};

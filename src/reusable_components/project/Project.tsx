@@ -15,7 +15,8 @@ import {
   Technologies,
   TechnologiesDiv,
 } from "./style";
-import { LuGithub } from "react-icons/lu";type ProjectProps = {
+import { LuGithub } from "react-icons/lu";
+type ProjectProps = {
   name: string;
   description: string;
   image: string;
@@ -69,7 +70,7 @@ function Project({
         <Description>{description}</Description>
       </DescriptionDiv>
 
-      <ExpoloreButtonDiv>
+      <ExpoloreButtonDiv to={`${name}`}>
         <G_Button
           icon={<CiCircleMore />}
           text='Explore More'

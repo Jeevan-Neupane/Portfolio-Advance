@@ -11,6 +11,6 @@ export const ImageDiv = styled.div`
   top: 40px;
   display: block !important;
   position: fixed !important;
-  background-image: url('https://res.cloudinary.com/chatappjeevanneupane/image/upload/v1727568629/j6svc44ubtxarjicgrvb.jpg');
+  background-image: url('https://res.cloudinary.com/chatappjeevanneupane/image/upload/v1730944042/vp9z8mt1oushfsszpdvg.jpg');
     width: 35%;
 `

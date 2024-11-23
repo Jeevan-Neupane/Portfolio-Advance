@@ -7,6 +7,11 @@ export const darkTheme = {
     borderColor: "#dddddd",
     whiteTextColor: "#ffffff",
 
+
+    singleProjectPage: {
+        lightTagColor: "#999"
+    }
+
 }
 
 export const lightTheme = {
