@@ -9,7 +9,14 @@ export const darkTheme = {
 
 
     singleProjectPage: {
-        lightTagColor: "#999"
+        lightTagColor: "#999",
+        headingColor: "#222",
+        textColor: "#333",
+
+    },
+
+    blogPage: {
+        cardBackground: "#ffffff",
     }
 
 }

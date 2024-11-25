@@ -3,6 +3,8 @@ import Personalinfo from "../../reusable_components/personal_info/Personalinfo";
 import Seperator from "../../reusable_components/seprator/Seperator";
 import SmallTitle from "../../reusable_components/small_title/SmallTitle";
 import {
+  DownloadButton,
+  DownloadButtonDiv,
   InfoContainer,
   InfoContainerDiv,
   InfoSection,
@@ -66,8 +68,15 @@ const Info = () => {
                     />
                   ))}
                 </RightInfoListContainer>
-                
               </LeftInfoContainer>
+              <DownloadButtonDiv>
+                <DownloadButton
+                  href='/path/to/your/cv.pdf'
+                  download
+                >
+                  Download CV
+                </DownloadButton>
+              </DownloadButtonDiv>
             </InfoContainerDiv>
           </LeftInfoDiv>
           <RightInfoDiv>
@@ -82,6 +91,7 @@ const Info = () => {
           </RightInfoDiv>
         </InfoContainer>
       </InfoSection>
+
       <Seperator />
     </>
   );
