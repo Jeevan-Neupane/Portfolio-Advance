@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { computer, labtop, mobile, smallMobile, tab } from "./responsive";
+import { extraLargeScreen, largeScreen, mediumScreen, smallScreen, mobileScreen, extraSmallScreen } from "./responsive";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -17,25 +17,25 @@ html{
 
 
 
-     ${computer({
+     ${extraLargeScreen({
 
 
 })}
 
 
-${labtop({
+${mediumScreen({
     fontSize: "60%"
 })}
 
-${tab({
+${smallScreen({
     fontSize: "55%"
 
 })}
 
- ${mobile({
+ ${mobileScreen({
     fontSize: "50%"
 })}
- ${smallMobile({
+ ${extraSmallScreen({
     fontSize: "38%"
 })}
 scroll-behavior:smooth;

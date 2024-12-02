@@ -17,7 +17,13 @@ export const darkTheme = {
 
     blogPage: {
         cardBackground: "#ffffff",
+    },
+
+    mobileNavbarColor: {
+        menuBarColor: "#333",
+        mmbackgroundColor:"#fff"
     }
+
 
 }
 

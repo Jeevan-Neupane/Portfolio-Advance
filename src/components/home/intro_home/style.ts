@@ -1,10 +1,25 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { largeScreen, mediumScreen, mobileScreen } from "../../../styles/responsive";
 
 export const TextDiv = styled.div`
-max-width: 570px;
-margin: 0 auto;
-text-align: left !important;
+width: 100%;
+max-width: 65rem;
+height: 100%;
+
+${largeScreen
+    `max-width: 52rem;`
+
+  }
+  ${mediumScreen(`
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`)}
+
+
+
 `
 
 export const NameRoleDiv = styled.h1`
@@ -18,16 +33,34 @@ span{
     display:block;
 }
 
+${mediumScreen(`
+    
+   text-align:center;
+`)}
+
+${mobileScreen(`
+    font-size: 3.2rem;
+    line-height: 4rem;
+    `)}
+
 `
 
 
 export const ProfileDiv = styled.p`
 margin: 1.5rem 0 2.8rem;
-  font-size: 16px;
-  line-height: 35px;
+  font-size: 1.6rem;
+  line-height: 3.5rem;
   color:${props => props.theme.lighttextColor};
 text-align:justify;
 
+${mediumScreen(`
+    text-align:center;
+`)}
+
+${mobileScreen(`
+    line-height: 2.5rem;
+    padding: 0 2rem;  
+    `)}
 
 `
 

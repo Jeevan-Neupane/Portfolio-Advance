@@ -1,8 +1,20 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { extraLargeScreen, largeScreen, mediumScreen, smallScreen, mobileScreen, extraSmallScreen } from "../../styles/responsive";
 
+export const MenuHeader = styled.div`
 
-export const MenuHeader = styled.div``
+    ${extraLargeScreen(`
+        display:block;
+    `)}
+
+    ${mediumScreen(`
+        display:none;
+    `)}
+
+    
+
+`
 
 export const PrimaryMenu = styled.ul`
     position: fixed;
@@ -107,3 +119,74 @@ export const MenuLink = styled(NavLink)`
     right: 3rem;
   }
 `;
+
+
+//* Mobile Navbar
+
+export const SmallDeviceMenuBar = styled.div`
+
+position: fixed;
+  top: 0;
+  left: 0;
+  background-color: ${({ theme }) => theme.mobileNavbarColor.mmbackgroundColor};
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${({ theme }) => theme.whiteTextColor}; 
+`
+
+export const CloseBarDiv = styled.div`
+position:absolute;
+font-size:3rem;
+top:1rem;
+right:1rem;
+color:${({ theme }) => theme.mobileNavbarColor.menuBarColor};
+cursor:pointer;
+
+`
+export const MobilePrimaryMenuDiv = styled.div`
+
+`
+
+export const MobilePrimaryMenu = styled.ul`
+   
+`
+
+
+export const MobileMenuItem = styled.li`
+    
+list-style:none;
+text-align:center;
+padding:1rem;
+margin:1rem;
+    
+
+`
+
+export const MobileMenuLink = styled(NavLink)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.mobileNavbarColor.menuBarColor};
+  font-size: 2rem;
+  display:flex;
+  align-items:center;
+  gap:3rem;
+
+  &.active {
+    background-color: ${(props) => props.theme.specialColor};
+    color: white;
+  }
+
+  &:hover{
+    background-color:${props => props.theme.specialColor};
+    color: white;
+
+  }
+  padding: 1rem;
+  border-radius:1rem;
+`
+
+export const MobileMenuName = styled.span`
+  `

@@ -1,61 +1,64 @@
 import { css } from 'styled-components';
 
+// 1536px
+export const extraLargeScreen = (props: any) => {
+  return css`
+    @media (max-width: 1536px) {
+      ${props}
+    }
+  `;
+};
 
+// 1280px (1536px - 256px)
+export const largeScreen = (props: any) => {
+  return css`
+    @media (max-width: 1280px) {
+      ${props}
+    }
+  `;
+};
 
+// 1024px (1280px - 256px)
+export const mediumScreen = (props: any) => {
+  return css`
+    @media (max-width: 1024px) {
+      ${props}
+    }
+  `;
+};
 
+// 768px (1024px - 256px)
+export const smallScreen = (props: any) => {
+  return css`
+    @media (max-width: 768px) {
+      ${props}
+    }
+  `;
+};
 
+// 512px (768px - 256px)
+export const mobileScreen = (props: any) => {
+  return css`
+    @media (max-width: 512px) {
+      ${props}
+    }
+  `;
+};
 
-export const computer = (props:any) => {
-    return css`
-        @media (max-width:1440px) {
-            ${props}
-            
-        }
-        `
-}
+// 256px (512px - 256px)
+export const extraSmallScreen = (props: any) => {
+  return css`
+    @media (max-width: 256px) {
+      ${props}
+    }
+  `;
+};
 
-export const labtop = (props:any) => {
-    return css`
-        @media (max-width:1024px) {
-            ${props}
-            
-        }
-    `
-}
-
-export const tab = (props:any) => {
-    return css`
-        @media (max-width:768px) {
-            ${props}
-            
-        }
-    `
-}
-
-export const mobile = (props:any) => {
-    return css`
-         @media (max-width: 576px) {
-            ${props}
-            
-         }
-    `
-}
-
-
-
-export const smallMobile = (props:any) => {
-    return css`
-         @media (max-width: 440px) {
-            ${props}
-            
-         }
-    `
-}
-export const smallScreen = (props:any) => {
-    return css`
-         @media (max-height: 800px) {
-            ${props}
-            
-         }
-    `
-}
+// 0px (if necessary, can be a special case)
+export const zeroScreen = (props: any) => {
+  return css`
+    @media (max-width: 0px) {
+      ${props}
+    }
+  `;
+};

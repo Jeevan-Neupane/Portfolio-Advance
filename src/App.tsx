@@ -13,7 +13,10 @@ import AIProjects from "./components/projects/AIProjects";
 import CollegeProjects from "./components/projects/CollegeProject";
 import SingleProjectPage from "./pages/singleProjectPage/SingleProjectPage";
 
+
 function App() {
+  
+
   const router = createBrowserRouter([
     {
       path: "/",

@@ -33,7 +33,7 @@ const MediumArticles = () => {
 
   useEffect(() => {
     fetch(
-      "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@neupane.ashok.9696"
+      "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@jeevan.neupane003"
     )
       .then((res) => res.json())
       .then((data) => setArticles(data.items));
@@ -42,6 +42,8 @@ const MediumArticles = () => {
   if (articles.length === 0) {
     return <h1>Loading...</h1>;
   }
+
+  console.log(articles);
 
   return (
     <ArticlesContainer>
