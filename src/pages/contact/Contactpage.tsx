@@ -12,9 +12,11 @@ import ContactInfo from "../../reusable_components/contact_info/ContactInfo";
 import MyContactInfo from "../../data/Contact_info";
 import Form from "../../components/form/Form";
 import Social_Media from "../../components/social_media_icons/Social_Media";
+import ScrollToTop from "../../components/scollTop/ScrollTop";
 const Contactpage = () => {
   return (
     <ContactpageSecion>
+      <ScrollToTop />
       <Title
         title='Get In'
         hilightTitle='Touch'

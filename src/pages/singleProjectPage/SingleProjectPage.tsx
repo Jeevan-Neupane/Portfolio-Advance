@@ -1,3 +1,4 @@
+import ScrollToTop from "../../components/scollTop/ScrollTop";
 import ProjectDescription from "../../components/singleProjectPage/ProjectDescription";
 import KeyFeatures from "../../components/singleProjectPage/ProjectFeature";
 import ProjectLinks from "../../components/singleProjectPage/ProjectLinks";
@@ -44,6 +45,7 @@ function SingleProjectPage() {
   };
   return (
     <SingleProjectPageWrapper>
+      <ScrollToTop />
       <SingleProjectTitle
         title='Project Title'
         tagline='Project Tagline'

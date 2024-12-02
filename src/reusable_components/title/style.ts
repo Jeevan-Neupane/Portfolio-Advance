@@ -55,7 +55,7 @@ font-size: 10rem;
  color: rgba(30, 37, 48, 0.07);
 
  ${mobileScreen(`
-  font-size: 8rem;
+  font-size: 6.5rem;
   `)}
 
 `

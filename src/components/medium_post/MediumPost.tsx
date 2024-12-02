@@ -1,25 +1,12 @@
 import { useState, useEffect } from "react";
-import styled from "styled-components";
 import BlogPost from "./Article";
-
-const ArticlesContainer = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-`;
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-`;
-
-const Heading = styled.h1`
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: ${(props) => props.theme.singleProjectPage.headingColor};
-`;
+import {
+  ArticlesContainer,
+  Grid,
+  Heading,
+  LoadingOuterDiv,
+  TotalArticleNumber,
+} from "./style";
 
 // Utility function to extract the first image URL from HTML content
 const extractImageUrl = (content: string): string | null => {
@@ -30,17 +17,29 @@ const extractImageUrl = (content: string): string | null => {
 
 const MediumArticles = () => {
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(
       "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@jeevan.neupane003"
     )
       .then((res) => res.json())
-      .then((data) => setArticles(data.items));
+      .then((data) => {
+        setArticles(data.items);
+        setLoading(false);
+      });
   }, []);
 
+  if (loading) {
+    return (
+      <LoadingOuterDiv>
+        <div className='loader'></div>
+      </LoadingOuterDiv>
+    );
+  }
+
   if (articles.length === 0) {
-    return <h1>Loading...</h1>;
+    return <Heading>Articles Are Not Found Due To Error</Heading>;
   }
 
   console.log(articles);
@@ -48,9 +47,9 @@ const MediumArticles = () => {
   return (
     <ArticlesContainer>
       <Heading>Medium Articles</Heading>
+      <TotalArticleNumber>Total Articles: {articles.length}</TotalArticleNumber>
       <Grid>
         {articles?.map((post: any) => {
-          // Check if there's a thumbnail, if not, extract from the content
           const imageUrl = post.thumbnail || extractImageUrl(post.content);
 
           return (
@@ -61,6 +60,7 @@ const MediumArticles = () => {
               link={post.link}
               author={post.author}
               imageUrl={imageUrl}
+              categories={post.categories}
             />
           );
         })}

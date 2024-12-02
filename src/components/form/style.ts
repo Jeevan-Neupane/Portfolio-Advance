@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mediumScreen } from "../../styles/responsive";
 
 
 export const FormWrapper = styled.div`
@@ -12,6 +13,10 @@ export const NameEmailSubjContainer = styled.div`
 display: flex;
 justify-content:space-between;
 gap:2rem;
+
+${mediumScreen(`
+flex-direction: column;
+`)}
 
 `
 

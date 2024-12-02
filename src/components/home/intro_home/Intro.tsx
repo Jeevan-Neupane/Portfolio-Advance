@@ -22,7 +22,7 @@ const Intro = () => {
       </ProfileDiv>
 
       <Button
-        to='/about'
+        to='/about_me'
         text='More About Me'
         icon={<FaRegArrowAltCircleRight />}
       />
