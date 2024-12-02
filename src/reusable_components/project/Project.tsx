@@ -3,6 +3,7 @@ import {
   Description,
   DescriptionDiv,
   ExpoloreButtonDiv,
+  ExpoloreButtonOuterDiv,
   GithubButton,
   ProjectImage,
   ProjectImageContainer,
@@ -69,13 +70,14 @@ function Project({
       <DescriptionDiv>
         <Description>{description}</Description>
       </DescriptionDiv>
-
-      <ExpoloreButtonDiv to={`${name}`}>
-        <G_Button
-          icon={<CiCircleMore />}
-          text='Explore More'
-        />
-      </ExpoloreButtonDiv>
+      <ExpoloreButtonOuterDiv>
+        <ExpoloreButtonDiv to={`${name}`}>
+          <G_Button
+            icon={<CiCircleMore />}
+            text='Explore More'
+          />
+        </ExpoloreButtonDiv>
+      </ExpoloreButtonOuterDiv>
     </SingleProjectWrapper>
   );
 }

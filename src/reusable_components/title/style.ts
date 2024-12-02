@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobileScreen } from "../../styles/responsive";
 
 
 export const WidgetTitleContainer = styled.div`
@@ -16,7 +17,7 @@ margin: 0 auto;
 
 
 export const TitleDiv = styled.h1`
-font-size: 56px;
+font-size: 5.6rem;
   font-weight: 900 !important;
   color: #fff !important;
   text-transform: uppercase;
@@ -24,16 +25,23 @@ font-size: 56px;
   color: #666 !important;
 
   span{
-  font-size: 56px;
+  font-size: 5.6rem;
   font-weight: 900 !important;
   text-transform: uppercase;
   color:${props => props.theme.specialColor};
+  ${mobileScreen(`
+  font-size: 4.2rem;
+  `)}
   }
+
+  ${mobileScreen(`
+  font-size: 3.6rem;
+  `)}
 `
 
 
 export const Widget = styled.span`
-font-size: 110px;
+font-size: 10rem;
   left: 0;
   letter-spacing: 10px;
   line-height: 0.7;
@@ -45,6 +53,10 @@ font-size: 110px;
   
  transform: translateY(-50%);
  color: rgba(30, 37, 48, 0.07);
+
+ ${mobileScreen(`
+  font-size: 8rem;
+  `)}
 
 `
 

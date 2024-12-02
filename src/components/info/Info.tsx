@@ -2,6 +2,7 @@ import AchivementBox from "../../reusable_components/achivement_box/AchivementBo
 import Personalinfo from "../../reusable_components/personal_info/Personalinfo";
 import Seperator from "../../reusable_components/seprator/Seperator";
 import SmallTitle from "../../reusable_components/small_title/SmallTitle";
+import DownloadCVButton from "./DownloadCVButton";
 import {
   DownloadButton,
   DownloadButtonDiv,
@@ -69,14 +70,7 @@ const Info = () => {
                   ))}
                 </RightInfoListContainer>
               </LeftInfoContainer>
-              <DownloadButtonDiv>
-                <DownloadButton
-                  href='/path/to/your/cv.pdf'
-                  download
-                >
-                  Download CV
-                </DownloadButton>
-              </DownloadButtonDiv>
+              <DownloadCVButton />
             </InfoContainerDiv>
           </LeftInfoDiv>
           <RightInfoDiv>

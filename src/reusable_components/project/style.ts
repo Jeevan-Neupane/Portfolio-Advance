@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { mobileScreen, smallScreen } from "../../styles/responsive";
 
 
 export const SingleProjectWrapper = styled.div`
@@ -36,6 +37,11 @@ export const ProjectNameGithubDiv = styled.div`
 display:flex;
 justify-content:space-between;
 margin-top:1rem;
+
+${smallScreen(`
+flex-direction:column;
+`)}
+
 `
 
 export const ProjectNameDiv = styled.div`
@@ -45,6 +51,11 @@ export const ProjectNameDiv = styled.div`
 
 export const ProjectName = styled.h3`
 font-size:2rem;
+
+${smallScreen(`
+
+height:6rem;
+`)}
 
 `
 
@@ -77,6 +88,12 @@ a:hover{
     transition:0.5s ease;
 }
 
+${smallScreen(`
+margin-top:1rem;
+padding:0.5rem;
+font-size:2rem;
+`)}
+
 `
 
 
@@ -87,6 +104,8 @@ gap:1rem;
 font-size:1.2rem;
 margin-top:1.5rem;
 margin-bottom:1rem;
+
+
 `
 
 export const Technologies = styled.p`
@@ -95,24 +114,29 @@ padding:0.5rem;
 border-radius:0.5rem;
 color:${props => props.theme.lighttextColor};
 
+${smallScreen(`
+font-size:1.2rem;
+`)}
+
 `
 
 export const DescriptionDiv = styled.div`
 font-size:1.2rem;
 text-align:justify;
+height:8rem;
 
 `
 
 export const Description = styled.p`
 color:${props => props.theme.lighttextColor};
-height:8rem;
 padding:1rem;
+
 `
 
 export const ExpoloreButtonDiv = styled(Link)`
 margin-top:1rem;
 text-decoration:none;
-display:block;
 `
 
-export const ExpoloreButton = styled.button``
+export const ExpoloreButtonOuterDiv = styled.div`
+`

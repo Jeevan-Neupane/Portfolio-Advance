@@ -10,8 +10,8 @@ export const darkTheme = {
 
     singleProjectPage: {
         lightTagColor: "#999",
-        headingColor: "#222",
-        textColor: "#333",
+        headingColor: "#333",
+        textColor: "#444",
 
     },
 
