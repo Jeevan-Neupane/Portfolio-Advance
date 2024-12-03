@@ -12,11 +12,9 @@ import WebProjects from "./components/projects/WebProjects";
 import AIProjects from "./components/projects/AIProjects";
 import CollegeProjects from "./components/projects/CollegeProject";
 import SingleProjectPage from "./pages/singleProjectPage/SingleProjectPage";
-
+import JourneyPage from "./pages/journey/JourneyPage";
 
 function App() {
-  
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -29,6 +27,10 @@ function App() {
         {
           path: "/about_me",
           element: <Aboutpage />,
+        },
+        {
+          path: "/journey",
+          element: <JourneyPage />,
         },
         {
           path: "/works",

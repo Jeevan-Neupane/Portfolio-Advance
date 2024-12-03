@@ -13,6 +13,7 @@ import MyContactInfo from "../../data/Contact_info";
 import Form from "../../components/form/Form";
 import Social_Media from "../../components/social_media_icons/Social_Media";
 import ScrollToTop from "../../components/scollTop/ScrollTop";
+import { Footer } from "../../components/footer/Footer";
 const Contactpage = () => {
   return (
     <ContactpageSecion>
@@ -54,6 +55,7 @@ const Contactpage = () => {
           <Form />
         </RightContactContainer>
       </ContactContainer>
+      <Footer />
     </ContactpageSecion>
   );
 };

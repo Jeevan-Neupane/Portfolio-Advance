@@ -1,3 +1,4 @@
+import { Footer } from "../../components/footer/Footer";
 import MediumArticles from "../../components/medium_post/MediumPost";
 import ScrollToTop from "../../components/scollTop/ScrollTop";
 import Title from "../../reusable_components/title/Title";
@@ -14,6 +15,7 @@ const Blogpage = () => {
       />
 
       <MediumArticles />
+      <Footer />
     </BlogpageSection>
   );
 };

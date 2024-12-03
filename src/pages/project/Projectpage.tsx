@@ -3,6 +3,7 @@ import Title from "../../reusable_components/title/Title";
 import { AllProjectsContainer, ProjectSection } from "./style";
 import Project_buttons from "../../components/projects_button/Project_buttons";
 import ScrollToTop from "../../components/scollTop/ScrollTop";
+import { Footer } from "../../components/footer/Footer";
 
 const Projectpage = () => {
   return (
@@ -18,6 +19,7 @@ const Projectpage = () => {
         <Project_buttons />
         <Outlet />
       </AllProjectsContainer>
+      <Footer />
     </ProjectSection>
   );
 };

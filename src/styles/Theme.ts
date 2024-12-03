@@ -22,7 +22,18 @@ export const darkTheme = {
     mobileNavbarColor: {
         menuBarColor: "#333",
         mmbackgroundColor:"#fff"
+    },
+    JourneyPageStyle:{
+        titleColor:"#333",
+        dateTextColor:"#555",
+        descriptionColor:"#666"
+    },
+    footerColor:{
+        footerBackground:"#333",
+        footerTextColor:"#fff",
+        socialLinkHover:"#72b626"
     }
+
 
 
 }

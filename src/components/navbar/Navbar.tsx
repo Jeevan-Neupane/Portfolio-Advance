@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
 import { MenuHeader, PrimaryMenu } from "./style";
 import Navitems from "./Navitems";
-
+import { GiJourney } from "react-icons/gi";
 const Navbar = () => {
   const NavItems = [
     { to: "", name: "Home", Icon: FaHome },
@@ -13,6 +13,7 @@ const Navbar = () => {
     { to: "works/web", name: "Work", Icon: FaSuitcase },
     { to: "contact", name: "Contact", Icon: MdEmail },
     { to: "blogs", name: "Blog", Icon: FaPen },
+    { to: "journey", name: "Events", Icon: GiJourney },
   ];
   return (
     <MenuHeader>

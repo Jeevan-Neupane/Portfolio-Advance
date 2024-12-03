@@ -13,6 +13,8 @@ import { FaSuitcase } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
 import MobileNavItems from "./MobileNavItems";
+import { GiJourney } from "react-icons/gi";
+
 function MobileNavbar() {
   const dispatch = useDispatch();
   const NavItems = [
@@ -21,6 +23,7 @@ function MobileNavbar() {
     { to: "works/web", name: "Work", Icon: FaSuitcase },
     { to: "contact", name: "Contact", Icon: MdEmail },
     { to: "blogs", name: "Blog", Icon: FaPen },
+    { to: "journey", name: "Journey", Icon: GiJourney}
   ];
 
   const handleToggle = () => {

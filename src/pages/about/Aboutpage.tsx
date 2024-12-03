@@ -1,4 +1,5 @@
 import EandE from "../../components/eande/EandE";
+import { Footer } from "../../components/footer/Footer";
 import Info from "../../components/info/Info";
 import Skills from "../../components/skills/Skills";
 import Title from "../../reusable_components/title/Title";
@@ -16,6 +17,7 @@ const Aboutpage = () => {
       <Info />
       <Skills />
       <EandE />
+      <Footer />
     </AboutPageDiv>
   );
 };
