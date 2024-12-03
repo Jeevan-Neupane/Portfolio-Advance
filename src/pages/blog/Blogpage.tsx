@@ -6,17 +6,19 @@ import { BlogpageSection } from "./style";
 
 const Blogpage = () => {
   return (
-    <BlogpageSection>
-      <ScrollToTop />
-      <Title
-        title='My'
-        hilightTitle='Blogs'
-        widget='Posts'
-      />
+    <>
+      <BlogpageSection>
+        <ScrollToTop />
+        <Title
+          title='My'
+          hilightTitle='Blogs'
+          widget='Posts'
+        />
 
-      <MediumArticles />
+        <MediumArticles />
+      </BlogpageSection>
       <Footer />
-    </BlogpageSection>
+    </>
   );
 };
 

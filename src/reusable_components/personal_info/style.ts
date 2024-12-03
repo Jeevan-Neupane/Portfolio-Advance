@@ -21,6 +21,5 @@ color:#8b97a0;
 export const InfoDiv = styled.span`
 color:${props => props.theme.lighttextColor};
 opacity: .8;
-  text-transform: capitalize;
   font-weight:600;
 `

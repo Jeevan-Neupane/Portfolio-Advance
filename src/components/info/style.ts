@@ -65,6 +65,8 @@ ${mediumScreen(`
   margin-top:3rem;
 
   `)}
+
+
 `
 
 export const DownloadButtonDiv = styled.div`
@@ -79,6 +81,7 @@ display: flex;
   padding-right: 0;
   margin-top: 2rem;
   `)}
+
 
 
 `

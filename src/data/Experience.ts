@@ -1,31 +1,22 @@
 import { FaBriefcase } from "react-icons/fa";
 
 const MyExperiences = [
-    {
-        title: "Web Developer",
-        place: "Company 1",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam in nunc.",
-        from:"2022",
-        to:"Present",
-        icon: FaBriefcase
-
-    },
-    {
-        title: "Web Developer",
-        place: "Company 2",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam in nunc.",
-        from:"2020",
-        to:"2022",
-        icon: FaBriefcase
-    }, {
-        title: "Web Developer",
-        place: "Company 3",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam in nunc.",
-        from:"2018",
-        to:"2020",
-        icon: FaBriefcase
-    }
-
-]
+  {
+    title: "Software Engineering Intern",
+    place: "Pulchowk Campus",
+    description: "Currently working as a Software Engineering Intern, contributing to software development and learning new technologies in a real-world environment.",
+    from: "2024",
+    to: "Present",
+    icon: FaBriefcase,
+  },
+  {
+    title: "Web Developer",
+    place: "LOST",
+    description: "Involved in building the Locus website, focusing on creating an intuitive, scalable, and user-friendly web platform.",
+    from: "2024",
+    to: "Present",
+    icon: FaBriefcase,
+  },
+];
 
 export default MyExperiences;

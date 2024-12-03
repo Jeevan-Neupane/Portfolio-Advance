@@ -16,6 +16,8 @@ ${mediumScreen(`
 flex-direction: column;
 gap: 2rem;
 `)}
+margin-bottom:3rem;
+
 
 `
 

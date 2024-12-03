@@ -1,3 +1,4 @@
+import { Footer } from "../../components/footer/Footer";
 import ScrollToTop from "../../components/scollTop/ScrollTop";
 import ProjectDescription from "../../components/singleProjectPage/ProjectDescription";
 import KeyFeatures from "../../components/singleProjectPage/ProjectFeature";
@@ -44,21 +45,24 @@ function SingleProjectPage() {
     showLiveLabel: true,
   };
   return (
-    <SingleProjectPageWrapper>
-      <ScrollToTop />
-      <SingleProjectTitle
-        title='Project Title'
-        tagline='Project Tagline'
-      />
-      <ProjectSlideshow media={mediaData} />
-      <ProjectDescription
-        paragraphOne={paragraphOne}
-        paragraphTwo={paragraphTwo}
-      />
-      <KeyFeatures features={features} />
-      <TechStack technologies={technologies} />
-      <ProjectLinks links={projectLinks} />
-    </SingleProjectPageWrapper>
+    <>
+      <SingleProjectPageWrapper>
+        <ScrollToTop />
+        <SingleProjectTitle
+          title='Project Title'
+          tagline='Project Tagline'
+        />
+        <ProjectSlideshow media={mediaData} />
+        <ProjectDescription
+          paragraphOne={paragraphOne}
+          paragraphTwo={paragraphTwo}
+        />
+        <KeyFeatures features={features} />
+        <TechStack technologies={technologies} />
+        <ProjectLinks links={projectLinks} />
+      </SingleProjectPageWrapper>
+      <Footer />
+    </>
   );
 }
 

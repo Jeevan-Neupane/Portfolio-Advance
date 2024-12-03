@@ -16,47 +16,49 @@ import ScrollToTop from "../../components/scollTop/ScrollTop";
 import { Footer } from "../../components/footer/Footer";
 const Contactpage = () => {
   return (
-    <ContactpageSecion>
-      <ScrollToTop />
-      <Title
-        title='Get In'
-        hilightTitle='Touch'
-        widget='Contact'
-      />
-      <ContactContainer>
-        <LeftContactContainer>
-          <SmallTitle
-            textAlign='left'
-            title="DON'T BE SHY!"
-          />
+    <>
+      <ContactpageSecion>
+        <ScrollToTop />
+        <Title
+          title='Get In'
+          hilightTitle='Touch'
+          widget='Contact'
+        />
+        <ContactContainer>
+          <LeftContactContainer>
+            <SmallTitle
+              textAlign='left'
+              title="DON'T BE SHY!"
+            />
 
-          <InfoDiv>
-            Feel free to get in touch with me. I am always open to discussing
-            new projects, creative ideas or opportunities to be part of your
-            visions.
-          </InfoDiv>
+            <InfoDiv>
+              Feel free to get in touch with me. I am always open to discussing
+              new projects, creative ideas or opportunities to be part of your
+              visions.
+            </InfoDiv>
 
-          <ContactInfoDiv>
-            {MyContactInfo.map((info, indes) => {
-              return (
-                <ContactInfo
-                  key={indes}
-                  title={info.title}
-                  info={info.info}
-                  icon={<info.icon />}
-                />
-              );
-            })}
-          </ContactInfoDiv>
-          <Social_Media />
-        </LeftContactContainer>
+            <ContactInfoDiv>
+              {MyContactInfo.map((info, indes) => {
+                return (
+                  <ContactInfo
+                    key={indes}
+                    title={info.title}
+                    info={info.info}
+                    icon={<info.icon />}
+                  />
+                );
+              })}
+            </ContactInfoDiv>
+            <Social_Media />
+          </LeftContactContainer>
 
-        <RightContactContainer>
-          <Form />
-        </RightContactContainer>
-      </ContactContainer>
+          <RightContactContainer>
+            <Form />
+          </RightContactContainer>
+        </ContactContainer>
+      </ContactpageSecion>
       <Footer />
-    </ContactpageSecion>
+    </>
   );
 };
 

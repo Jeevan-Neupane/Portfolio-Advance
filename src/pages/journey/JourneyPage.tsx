@@ -6,17 +6,18 @@ import { JourneySection } from "./style";
 
 function JourneyPage() {
   return (
-    <JourneySection>
-      <ScrollToTop />
-      <Title
-        title='My '
-        hilightTitle='Journey'
-        widget='Timeline'
-      />
-      <Timeline />
-
+    <>
+      <JourneySection>
+        <ScrollToTop />
+        <Title
+          title='My '
+          hilightTitle='Journey'
+          widget='Timeline'
+        />
+        <Timeline />
+      </JourneySection>
       <Footer />
-    </JourneySection>
+    </>
   );
 }
 

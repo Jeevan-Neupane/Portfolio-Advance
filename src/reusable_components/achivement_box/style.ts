@@ -1,8 +1,13 @@
 import styled from "styled-components";
+import { mobileScreen } from "../../styles/responsive";
 
 export const AchievementBoxWrapper = styled.div`
 border: 1px solid #f1f1f1;
 width: 45%;
+
+${mobileScreen(`
+width: 100%;
+`)}
 `
 export const AchievementBoxContainer = styled.div`
 padding: 2rem;
@@ -13,12 +18,12 @@ padding: 2rem;
 export const YearsBox = styled.h3`
 display: inline-block;
   margin: 0;
-  font-size: 50px;
+  font-size: 5rem;
   font-weight: 700;
   line-height: 110%;
 
   span{
-    font-size: 33px;
+    font-size: 3.3rem;
   }
     color:${promps => promps.theme.specialColor};
 `

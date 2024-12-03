@@ -27,10 +27,19 @@ font-size: 4.2rem;
 line-height: 5rem;
 text-transform: uppercase;
 color:${props => props.theme.specialColor};
-
+${mobileScreen(`
+    font-size: 3.2rem;
+    line-height: 4rem;
+    `)}
 span{
     color: #666;
+    font-size: 3rem;
     display:block;
+    ${mobileScreen(`
+    font-size: 2rem;
+    line-height: 4rem;
+    `)}
+
 }
 
 ${mediumScreen(`
@@ -38,10 +47,7 @@ ${mediumScreen(`
    text-align:center;
 `)}
 
-${mobileScreen(`
-    font-size: 3.2rem;
-    line-height: 4rem;
-    `)}
+
 
 `
 
