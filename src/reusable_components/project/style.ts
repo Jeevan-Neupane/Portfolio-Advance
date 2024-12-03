@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { mobileScreen, smallScreen } from "../../styles/responsive";
+import {  smallScreen } from "../../styles/responsive";
 
 
 export const SingleProjectWrapper = styled.div`

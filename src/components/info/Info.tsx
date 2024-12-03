@@ -4,8 +4,7 @@ import Seperator from "../../reusable_components/seprator/Seperator";
 import SmallTitle from "../../reusable_components/small_title/SmallTitle";
 import DownloadCVButton from "./DownloadCVButton";
 import {
-  DownloadButton,
-  DownloadButtonDiv,
+
   InfoContainer,
   InfoContainerDiv,
   InfoSection,

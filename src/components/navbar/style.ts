@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { extraLargeScreen, largeScreen, mediumScreen, smallScreen, mobileScreen, extraSmallScreen } from "../../styles/responsive";
+import { extraLargeScreen, mediumScreen } from "../../styles/responsive";
 
 export const MenuHeader = styled.div`
 

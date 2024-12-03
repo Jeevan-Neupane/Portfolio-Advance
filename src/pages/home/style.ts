@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { extraLargeScreen, largeScreen, mediumScreen, smallScreen, mobileScreen, extraSmallScreen } from "../../styles/responsive";
+import { mediumScreen, mobileScreen } from "../../styles/responsive";
 export const ColorBlock = styled.div`
   position: fixed;
   height: 200%;

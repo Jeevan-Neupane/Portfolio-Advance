@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { largeScreen, mediumScreen, mobileScreen, smallScreen } from "../../../styles/responsive"
+import { mobileScreen } from "../../../styles/responsive"
 export const ImageDiv = styled.div`
   background-color:transparent;
   width:60rem;

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { extraLargeScreen, largeScreen, mediumScreen, smallScreen, mobileScreen, extraSmallScreen } from "./responsive";
+import { extraLargeScreen, mediumScreen, smallScreen, mobileScreen, extraSmallScreen } from "./responsive";
 
 
 const GlobalStyle = createGlobalStyle`
