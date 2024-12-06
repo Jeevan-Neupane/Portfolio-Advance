@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { mediumScreen } from "../../styles/responsive";
 
-type FormProps = {
-    disabled: boolean;
-}
+
 
 export const FormWrapper = styled.div`
 `

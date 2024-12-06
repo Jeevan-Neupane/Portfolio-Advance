@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { extraLargeScreen, largeScreen, mediumScreen, } from "../styles/responsive";
+import { extraLargeScreen, largeScreen, } from "../styles/responsive";
 
 type MenuBarIconProps = {
     isOpen: boolean;
