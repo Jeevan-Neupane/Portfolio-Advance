@@ -7,18 +7,20 @@ import { AboutPageDiv } from "./style";
 
 const Aboutpage = () => {
   return (
-    <AboutPageDiv>
-      <Title
-        title='About'
-        hilightTitle='Me'
-        widget='Resume'
-      />
+    <>
+      <AboutPageDiv>
+        <Title
+          title='About'
+          hilightTitle='Me'
+          widget='Resume'
+        />
 
-      <Info />
-      <Skills />
-      <EandE />
+        <Info />
+        <Skills />
+        <EandE />
+      </AboutPageDiv>
       <Footer />
-    </AboutPageDiv>
+    </>
   );
 };
 

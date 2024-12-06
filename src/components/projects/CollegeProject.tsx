@@ -5,6 +5,7 @@ import ProjectTitle from "./ProjectTitle";
 import { ProjectContainer, ProjectsWrapper } from "./style";
 import { collegeProjectsfilterProjectsLists } from "../../data/filter_projects";
 import MultiSelectFilter from "../filter_project/FilterProjects";
+import No_projects_div from "./No_projects_div";
 
 function CollegeProjects() {
   const [selectedFilters, setSelectedFilters] = useState<string[]>(["All"]);
@@ -54,7 +55,7 @@ function CollegeProjects() {
       />
 
       <ProjectsWrapper>
-        {filteredProjects.length > 0 ? (
+        {filteredProjects.length > 0 &&
           filteredProjects.map((project) => (
             <Project
               key={project.name}
@@ -65,11 +66,9 @@ function CollegeProjects() {
               technologies={project.technologies}
               type={project.type}
             />
-          ))
-        ) : (
-          <p>No projects found for the selected filters.</p>
-        )}
+          ))}
       </ProjectsWrapper>
+      {filteredProjects.length === 0 && <No_projects_div />}
     </ProjectContainer>
   );
 }

@@ -8,9 +8,11 @@ width: 45%;
 ${mobileScreen(`
 width: 100%;
 `)}
+margin-left:1rem;
 `
 export const AchievementBoxContainer = styled.div`
 padding: 2rem;
+
 
 `
 

@@ -2,9 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { LeftArrow, MediaWrapper, RightArrow, SliderContainer, StyledImage, StyledVideo } from "./style";
-
-
+import ReactPlayer from "react-player";
+import { LeftArrow, MediaWrapper, RightArrow, SliderContainer, StyledImage, StyledReactPlayerWrapper } from "./style";
 
 // Define the type for slider media
 interface SliderMediaItem {
@@ -54,10 +53,16 @@ export const ProjectSlideshow: React.FC<ProjectSlideshowProps> = ({
                 alt={`Slide ${index + 1}`}
               />
             ) : (
-              <StyledVideo
-                controls
-                src={item.url}
-              />
+              <StyledReactPlayerWrapper>
+                <ReactPlayer
+                  url={item.url}
+                  playing={true} // Autoplay enabled
+                  muted={true}  // Disable audio
+                  controls={true} // Keep video controls
+                  width="100%"
+                  height="100%"
+                />
+              </StyledReactPlayerWrapper>
             )}
           </MediaWrapper>
         ))}

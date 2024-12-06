@@ -242,3 +242,15 @@ export const TechLink = styled.a`
   color: ${(props) => props.theme.singleProjectPage.textColor};
 
 `;
+
+export const StyledReactPlayerWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  // Styling ReactPlayer's internal controls
+  .react-player__volume-bar, // Volume bar
+  .react-player__volume-control { 
+    display: none !important; // Hide volume slider and mute button
+  }
+`;

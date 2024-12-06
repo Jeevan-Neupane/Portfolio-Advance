@@ -5,6 +5,7 @@ import { mediumScreen } from "../../styles/responsive";
 
 export const ContactpageSecion = styled(WrapperContainer)`
 max-width:1120px;
+margin-bottom:17rem;
 `
 
 export const ContactContainer = styled(WrapperContainer)`

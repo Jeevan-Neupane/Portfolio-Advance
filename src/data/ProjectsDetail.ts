@@ -8,3 +8,27 @@ export const projectData = {
     liveLink: "https://live-project-link.com",
     repoLink: "https://github.com/project-repo",
 };
+
+
+export const AllProjects = [
+    {
+        title: "Ecommerce Website",
+        tagline: "",
+        heroImage: "",
+        description: "",
+        features: [],
+        tools: [],
+        liveLink: "",
+        repoLink: "https://github.com/Jeevan-Neupane/JN-e-Store",
+    },
+    {
+        title: "Balen AI",
+        tagline: "",
+        heroImage: "",
+        description: "",
+        features: [],
+        tools: [],
+        liveLink: "",
+        repoLink: "https://github.com/Jeevan-Neupane/BalenAI"
+    }
+]

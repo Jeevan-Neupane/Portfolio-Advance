@@ -42,7 +42,6 @@ const MediumArticles = () => {
     return <Heading>Articles Are Not Found Due To Error</Heading>;
   }
 
-  console.log(articles);
 
   return (
     <ArticlesContainer>

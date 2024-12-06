@@ -5,7 +5,10 @@ import cv from "../../assets/documents/jeevan_neupane_resume.pdf";
 function DownloadCVButton() {
   return (
     <DownloadButtonDiv>
-      <DownloadButton href={cv}>
+      <DownloadButton
+        href={cv}
+        target='_blank'
+      >
         <span>Download CV</span>
         <IconDiv>
           <FaDownload />

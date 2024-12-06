@@ -1,137 +1,114 @@
 
 export const WebDevProjects = [
     {
-        name: "Personal Portfolio",
+        name: "Ecommerce Website",
         type: "Personal",
-        image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-        github: "https://github.com/user/portfolio",
-        description: "A personal portfolio website built with React and styled-components to showcase my work.",
-        technologies: ["React", "Styled-components", "JavaScript"],
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733316116/web%20projects/juxysigjeck5nntqbudy.png",
+        github: "https://github.com/Jeevan-Neupane/JN-e-Store",
+        description: "An e-commerce website allowing users to browse products, add items to the cart, and complete purchases online."
+        ,
+        technologies: ["React", "Styled-components", "JavaScript", "React", "appwrite", "TypeScript"]
     },
     {
-        name: "E-Commerce Store",
-        type: "Project",
-        image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-        github: "https://github.com/user/e-commerce",
-        description: "An e-commerce platform with features like product catalog and shopping cart functionality, built with React and Node.js.",
-        technologies: ["React", "Node", "MongoDB", "JavaScript"],
-    },
-    {
-        name: "Blog Website",
-        type: "Project",
-        image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-        github: "https://github.com/user/blog-website",
-        description: "A simple blog website that allows users to create and read posts, built with Next.js and Styled-components.",
-        technologies: ["Next", "Styled-components", "React", "JavaScript"],
-    },
-    {
-        name: "Social Media Dashboard",
-        type: "Project",
-        image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-        github: "https://github.com/user/social-dashboard",
-        description: "A dashboard to track social media analytics, built using TypeScript and React.",
-        technologies: ["React", "TypeScript", "Styled-components"],
-    },
-    {
-        name: "Real-time Chat App",
+        name: "Movix",
         type: "Personal",
-        image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-        github: "https://github.com/user/chat-app",
-        description: "A real-time chat application with WebSocket support, built using Node.js and Express.",
-        technologies: ["Node", "Express", "WebSocket", "JavaScript"],
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733326362/web%20projects/gr8tctu0xsiu5ews4dfi.png",
+        github: "https://github.com/Jeevan-Neupane/movix",
+        description: "A website that displays recently released and top trending movies and TV shows, with cast and trailers.",
+        technologies: ["React", "Redux", "SaaS"]
     },
+    {
+        name: "CHIT-CHAT",
+        type: "Personal",
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733358387/web%20projects/rsmsml66prcm4isrpo5d.png",
+        github: "https://github.com/Jeevan-Neupane/Chat",
+        description: "A real-time messaging platform for instant communication, allowing users to create accounts, add friends, and chat in real time.",
+        technologies: ["TypeScript", "Express", "Socket.io", "Styled-components"]
+    },
+    {
+        name: "GitHub User Finder",
+        type: "Personal",
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733327037/web%20projects/wtygvqkmz6uptq7y9el7.png",
+        github: "https://github.com/Jeevan-Neupane/github-user-finder",
+        description: "Search and view GitHub user profiles and their repositories using the GitHub API.",
+        technologies: ["React", "Redux", "appwrite", "Styled-components"]
+    },
+    {
+        name: "Todo Website",
+        type: "Personal",
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733325611/web%20projects/uuie4pxsg79fafxlgmrp.png",
+        github: "https://github.com/Jeevan-Neupane/To-Do",
+        description: "A todo list website where users can create, edit, delete, mark tasks as completed, and toggle between dark and light themes.",
+        technologies: ["React", "JavaScript"]
+    }
+
+
+
+
+
 ];
 
 
 
 export const AIMLProjects = [
     {
-        name: "AI Image Classification",
-        type: "Personal",
-        image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-        github: "https://github.com/example/ai-image-classification",
-        description:
-            "This project involves building an image classification model using TensorFlow to classify images into different categories.",
-        technologies: ["Python", "Tensorflow", "Deep Learning", "Machine Learning"],
+        name: "Balen AI",
+        type: "Hackathon",
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733317483/web%20projects/arzl7rgfnltnddrnqtnm.png",
+        github: "https://github.com/Jeevan-Neupane/BalenAI",
+        description: "Uses security cameras to detect smoking in public places, trigger alarms, and track individuals for security."
+        ,
+        technologies: ["Python", "TensorFlow", "Deep Learning", "Machine Learning"]
     },
     {
-        name: "Natural Language Processing for Sentiment Analysis",
-        type: "Personal",
-        image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-        github: "https://github.com/example/sentiment-analysis-nlp",
-        description:
-            "This project uses Natural Language Processing (NLP) to analyze text data and predict the sentiment (positive or negative) of the given input.",
-        technologies: ["Python", "NLP", "Machine Learning", "Deep Learning"],
+        name: "Educational Video Generator",
+        type: "Hackathon",
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733399943/web%20projects/tso3adqiiu1taxyhxh3o.png",
+        github: "https://github.com/Jeevan-Neupane/text_to_video",
+        description: "Generates AI-driven educational videos from text/description, with MCQs, a chatbot, and a reels feature to engage children.",
+        technologies: ["Next.js", "FastAPI", "DALLE-2", "OpenAI",]
     },
     {
-        name: "Stock Price Prediction using Machine Learning",
-        type: "Personal",
-        image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-        github: "https://github.com/example/stock-price-prediction",
-        description:
-            "This project predicts future stock prices based on historical data using machine learning techniques like regression and decision trees.",
-        technologies: ["Python", "Machine Learning", "Data Science", "TensorFlow"],
-    },
-    {
-        name: "Facial Recognition System",
-        type: "Personal",
-        image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-        github: "https://github.com/example/facial-recognition",
-        description:
-            "A facial recognition system built using Python and OpenCV to detect and identify faces in real-time using computer vision techniques.",
-        technologies: ["Python", "Computer Vision", "Deep Learning", "TensorFlow"],
-    },
-    {
-        name: "Voice Assistant using NLP",
-        type: "Personal",
-        image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-        github: "https://github.com/example/voice-assistant",
-        description:
-            "This project creates a voice assistant using Python and NLP techniques. It can perform tasks such as answering questions and managing daily tasks.",
-        technologies: ["Python", "NLP", "Machine Learning", "Natural Language Processing"],
-    },
+        name: "VITON",
+        type: "Hackathon",
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733358950/web%20projects/or882vwfzuiodutmglcn.png",
+        github: "https://github.com/Jeevan-Neupane/viton_frontend",
+        description: "A virtual try-on system that allows users to upload their image and see clothes fit virtually before purchasing.",
+        technologies: ["Deep Learning", "Pytorch", "FastAPI", "ReactJS"]
+    }
+
+
+
+
 ];
 
 export const CollegeRelatedProjects = [
     {
-      name: "Project A - First Year",
-      type: "Personal",
-      image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-      github: "https://github.com/example/project-a",
-      description: "A basic React project for first-year students. It covers fundamental concepts of React.",
-      technologies: ["First Year", "React", "Typescript", "Object Oriented Programming"],
+        name: "Shopping Cart Using OOP",
+        type: "College",
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733400632/web%20projects/gnt4qqgwcyyznmxarqtn.png",
+        github: "https://github.com/Jeevan-Neupane/Shopping-Cart",
+        description: "A shopping cart system using OOP with wxWidgets, including item management, bill generation, and QR code functionality."
+        ,
+        technologies: ["wxWidgets", "Object-Oriented Programming", "Second Year", "C++"]
     },
     {
-      name: "Project B - Object-Oriented Programming",
-      type: "Personal",
-      image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-      github: "https://github.com/example/project-b",
-      description: "An OOP-based project focusing on the design patterns in Java.",
-      technologies: ["Second Year", "Java", "OOP"],
+        name: "Fourth Year Database",
+        type: "College",
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733401185/web%20projects/wvahrb4p16zcllolq5zd.png",
+        github: "https://github.com/Jeevan-Neupane/4th-year-project-database",
+        description: "A system where students can upload projects for admin approval. Built with Node.js, Express, and MongoDB.",
+        technologies: ["Node.js", "Express", "MongoDB", "Software Engineering", "Third Year"]
     },
     {
-      name: "Project C - DSA",
-      type: "Personal",
-      image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-      github: "https://github.com/example/project-c",
-      description: "A data structures and algorithms project in C++, featuring sorting algorithms and linked lists.",
-      technologies: ["Third Year", "C++", "DSA"],
-    },
-    {
-      name: "Project D - Computer Graphics",
-      type: "Personal",
-      image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-      github: "https://github.com/example/project-d",
-      description: "A 3D graphics project that involves rendering algorithms like Bresenham’s line algorithm.",
-      technologies: ["Fourth Year", "C++", "OpenGL", "Computer Graphics"],
-    },
-    {
-      name: "Project E - Full Stack Development",
-      type: "Personal",
-      image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-      github: "https://github.com/example/project-e",
-      description: "A full-stack project built using React, Node.js, and MongoDB to create a task manager application.",
-      technologies: ["Third Year", "React", "Node.js", "MongoDB", "DSA", "Computer Graphics"],
+        name: "Zipper",
+        type: "College",
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733441271/web%20projects/h71sdlb1vx9o2a0udoxg.jpg",
+        github: "https://github.com/Jeevan-Neupane/file-zipper",
+        description: "Compress and decompress `.txt` files using Huffman encoding and LZ78 algorithms, with a wxWidgets-built user interface.",
+        technologies: ["C++", "wxWidgets", "Huffman Encoding", "LZ78", "Data Structures & Algorithms"]
     }
-  ];
-  
+
+
+
+];

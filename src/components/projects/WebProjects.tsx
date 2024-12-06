@@ -5,6 +5,7 @@ import ProjectTitle from "./ProjectTitle";
 import { ProjectContainer, ProjectsWrapper } from "./style";
 import { webfilterProjectsLists } from "../../data/filter_projects";
 import MultiSelectFilter from "../filter_project/FilterProjects";
+import No_projects_div from "./No_projects_div";
 
 function WebProjects() {
   const [selectedFilters, setSelectedFilters] = useState<string[]>(["All"]);
@@ -34,8 +35,6 @@ function WebProjects() {
     }
   }, [selectedFilters]);
 
-  console.log("Filtered Projects:", filteredProjects);
-
   return (
     <ProjectContainer>
       <ProjectTitle
@@ -49,7 +48,7 @@ function WebProjects() {
       />
 
       <ProjectsWrapper>
-        {filteredProjects.length > 0 ? (
+        {filteredProjects.length > 0 &&
           filteredProjects.map((project) => (
             <Project
               key={project.name}
@@ -60,11 +59,9 @@ function WebProjects() {
               technologies={project.technologies}
               type={project.type}
             />
-          ))
-        ) : (
-          <p>No projects found for the selected filters.</p>
-        )}
+          ))}
       </ProjectsWrapper>
+      {filteredProjects.length === 0 && <No_projects_div />}
     </ProjectContainer>
   );
 }

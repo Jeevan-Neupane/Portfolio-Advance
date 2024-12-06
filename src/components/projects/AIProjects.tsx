@@ -5,6 +5,7 @@ import Project from "../../reusable_components/project/Project";
 import MultiSelectFilter from "../filter_project/FilterProjects";
 import ProjectTitle from "./ProjectTitle";
 import { ProjectContainer, ProjectsWrapper } from "./style";
+import No_projects_div from "./No_projects_div";
 
 function AIProjects() {
   // State to store selected filters, initially empty
@@ -37,6 +38,8 @@ function AIProjects() {
     }
   }, [selectedFilters]);
 
+ 
+
   return (
     <ProjectContainer>
       <ProjectTitle
@@ -52,7 +55,7 @@ function AIProjects() {
 
       {/* Displaying filtered projects */}
       <ProjectsWrapper>
-        {filteredProjects.length > 0 ? (
+        {filteredProjects.length > 0 &&
           filteredProjects.map((project) => (
             <Project
               key={project.name}
@@ -63,11 +66,9 @@ function AIProjects() {
               technologies={project.technologies}
               type={project.type}
             />
-          ))
-        ) : (
-          <p>No projects found for the selected filters.</p>
-        )}
+          ))}
       </ProjectsWrapper>
+      {filteredProjects.length === 0 && <No_projects_div />}
     </ProjectContainer>
   );
 }

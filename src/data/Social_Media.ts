@@ -1,25 +1,24 @@
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
 
 const MySocialMedia = [
 
     {
-        href: "https://www.linkedin.com/in/your-linkedin",
+        href: "https://www.linkedin.com/in/jeevan-neupane-16a407258/",
         icon: FaLinkedin,
     },
     {
-        href: "https://www.github.com/your-github",
+        href: "https://github.com/Jeevan-Neupane",
         icon: FaGithub,
 
     }, {
-        href: "https://www.twitter.com/your-twitter",
+        href: "https://x.com/JeevanNeup38484",
         icon: FaSquareXTwitter
     },
     {
-        href: "https://www.facebook.com/your-facebook",
-        icon: FaFacebookSquare
+        href: "https://www.youtube.com/@6thSemester-y9x",
+        icon: FaYoutube
     },
 
 ]

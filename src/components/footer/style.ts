@@ -9,7 +9,7 @@ export const FooterContainer = styled.footer`
 
 export const FooterContent = styled.div`
   max-width: 75rem; 
-  margin: 0 auto;
+  margin: 2rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,12 +27,11 @@ export const Section = styled.div`
   text-align: center;
 
   h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-top: 0;
   }
 `;
@@ -56,3 +55,9 @@ export const CopyrightText = styled.p`
   margin-top: 2rem;
   font-size: 1rem;
 `;
+
+export const HorizontalLine = styled.hr`
+width:50%;
+margin:0 auto;
+
+`

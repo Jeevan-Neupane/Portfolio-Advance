@@ -2,7 +2,6 @@ export const webfilterProjectsLists = [
     {
         id: 1,
         name: "All",
-
     },
     {
         id: 2,
@@ -14,23 +13,32 @@ export const webfilterProjectsLists = [
     },
     {
         id: 4,
-        name: "Node",
+        name: "appwrite",
     },
     {
         id: 5,
-        name: "TypeScript"
+        name: "TypeScript",
     },
-    {
-        id: 6,
-        name: "Next"
-    },
+
     {
         id: 7,
-        name: "Styled-components"
-    }
+        name: "Styled-components",
+    },
+    {
+        id: 8,
+        name: "Express",
+    },
 
+    {
+        id: 10,
+        name: "Redux",
+    },
+    {
+        id: 11,
+        name: "SaaS",
+    },
+];
 
-]
 
 export const aifixfilterProjectsLists = [
     {
@@ -39,71 +47,88 @@ export const aifixfilterProjectsLists = [
     },
     {
         id: 2,
-        name: "Python"
+        name: "Python",
     },
     {
         id: 3,
-        name: "Machine Learning"
+        name: "Machine Learning",
     },
     {
         id: 4,
-        name: "Deep Learning"
+        name: "Deep Learning",
     },
     {
         id: 5,
-        name: "Data Science"
+        name: "OpenAI",
     },
     {
         id: 6,
-        name: "Computer Vision"
+        name: "Computer Vision",
     },
     {
         id: 7,
-        name: "Natural Language Processing"
+        name: "Natural Language Processing",
     },
-    {
-        id: 8,
-        name: "Tensorflow"
-    },
+
     {
         id: 9,
-        name: "Pytorch"
-    }
-]
+        name: "PyTorch",
+    },
 
+    {
+        id: 10,
+        name: "FastAPI",
+    },
+    {
+        id: 11,
+        name: "DALLE-2",
+    },
 
+];
 export const collegeProjectsfilterProjectsLists = [
     {
         id: 1,
         name: "All",
-
     },
     {
         id: 2,
-        name: "First Year"
+        name: "First Year",
     },
     {
         id: 3,
-        name: "Second Year"
+        name: "Second Year",
     },
     {
         id: 4,
-        name: "Third Year"
+        name: "Third Year",
     },
     {
         id: 5,
-        name: "Fourth Year"
+        name: "Fourth Year",
     },
     {
         id: 6,
-        name: "Object Oriented Programming"
+        name: "Object-Oriented Programming",
     },
     {
         id: 7,
-        name: "DSA"
+        name: "Data Structures & Algorithms",
+    },
+
+    {
+        id: 9,
+        name: "Database Management",
     },
     {
-        id: 8,
-        name: "Computer Graphics"
+        id: 10,
+        name: "WxWidgets",
+    },
+    {
+        id: 11,
+        name: "Software Engineering",
+    },
+    {
+        id: 12,
+        name: "C++"
     }
-]
+];

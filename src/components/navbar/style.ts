@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { extraLargeScreen, mediumScreen } from "../../styles/responsive";
+import { extraLargeScreen, largeScreen } from "../../styles/responsive";
 
 export const MenuHeader = styled.div`
 
@@ -8,7 +8,7 @@ export const MenuHeader = styled.div`
         display:block;
     `)}
 
-    ${mediumScreen(`
+    ${largeScreen(`
         display:none;
     `)}
 
@@ -88,7 +88,6 @@ export const MenuName = styled.span`
     
    
 `
-
 export const MenuLink = styled(NavLink)`
   width: 5rem;
   height: 5rem;
@@ -102,8 +101,8 @@ export const MenuLink = styled(NavLink)`
   font-size: 2rem;
   transition: 0.3s;
 
-  &:hover{
-    background-color:${props => props.theme.specialColor};
+  &:hover {
+    background-color: ${(props) => props.theme.specialColor};
   }
 
   &.active {
@@ -111,12 +110,10 @@ export const MenuLink = styled(NavLink)`
     color: white;
   }
 
-  /* Target the sibling MenuName when MenuLink is active */
-  &.active + ${MenuName} {
-    background-color: ${(props) => props.theme.specialColor};
-    color: white;
-    opacity: 1;
-    right: 3rem;
+  body.touch & {
+    &:hover {
+      background-color: ${(props) => props.theme.lightBackground}; /* Reset hover */
+    }
   }
 `;
 

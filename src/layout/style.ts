@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { extraLargeScreen, mediumScreen,  } from "../styles/responsive";
+import { extraLargeScreen, largeScreen, mediumScreen, } from "../styles/responsive";
 
 type MenuBarIconProps = {
     isOpen: boolean;
@@ -24,7 +24,7 @@ display:none;
     display:none;
     `)}   
 
-${mediumScreen(`
+${largeScreen(`
     display:block;
     `)}
 `

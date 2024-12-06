@@ -8,11 +8,15 @@ export const SingleProjectWrapper = styled.div`
 border-radius:1rem;
 padding:1rem;
 border:1px solid ${props => props.theme.borderColor}; 
+position:relative;
+padding-bottom:10rem;
+
 `
 
 export const ProjectImageContainer = styled.div`
 width:100%;
 border-radius:1rem;
+height:20rem;
 `
 
 
@@ -20,6 +24,7 @@ border-radius:1rem;
 export const ProjectImage = styled.img`
 width:100%;
 border-radius:1rem;
+height:100%;
 `
 
 
@@ -38,9 +43,8 @@ display:flex;
 justify-content:space-between;
 margin-top:1rem;
 
-${smallScreen(`
 flex-direction:column;
-`)}
+
 
 `
 
@@ -70,6 +74,8 @@ align-items: center;
 justify-content: center;
 cursor: pointer;
 a{
+    width:100%;
+    height:100%;
     
     padding-left:0.5rem;
     padding-right:0.5rem;
@@ -88,11 +94,10 @@ a:hover{
     transition:0.5s ease;
 }
 
-${smallScreen(`
+
 margin-top:1rem;
 padding:0.5rem;
 font-size:2rem;
-`)}
 
 `
 
@@ -139,4 +144,9 @@ text-decoration:none;
 `
 
 export const ExpoloreButtonOuterDiv = styled.div`
+
+position:absolute;
+left:2rem;
+bottom:2rem;
+
 `

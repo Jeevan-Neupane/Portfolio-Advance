@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { extraLargeScreen, mediumScreen, smallScreen, mobileScreen, extraSmallScreen } from "./responsive";
+import { extraLargeScreen, mediumScreen, smallScreen, mobileScreen, extraSmallScreen, largeScreen } from "./responsive";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -21,6 +21,11 @@ html{
 
 
 })}
+
+${largeScreen({
+    fontSize: "61%"
+})}
+
 
 
 ${mediumScreen({
