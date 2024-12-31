@@ -5,13 +5,14 @@ export const AllProjects = [
         projectTagline: "Online Shopping Platform",
         mediaData: [
             {
-                type: "image",
-                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733316116/web%20projects/juxysigjeck5nntqbudy.png",
-            },
-            {
                 type: "video",
                 url: "https://res.cloudinary.com/de1yfnzdz/video/upload/v1733316924/web%20projects/lx1bph3qdktbnjt27ale.mp4"
             },
+            {
+                type: "image",
+                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733316116/web%20projects/juxysigjeck5nntqbudy.png",
+            },
+
             {
                 type: "image",
                 url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733316116/web%20projects/qfkbmeoecpbcnnb5eel1.png",
@@ -46,13 +47,14 @@ export const AllProjects = [
         projectTagline: "Smoke Detection AI",
         mediaData: [
             {
-                type: "image",
-                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733317483/web%20projects/arzl7rgfnltnddrnqtnm.png",
-            },
-            {
                 type: "video",
                 url: "https://res.cloudinary.com/de1yfnzdz/video/upload/v1733360793/web%20projects/nkihfzpxxb9wbpl8m6lq.mp4"
             },
+            {
+                type: "image",
+                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733317483/web%20projects/arzl7rgfnltnddrnqtnm.png",
+            },
+
             {
                 type: "image",
                 url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733317480/web%20projects/uxzomwmdjwgghunvj0zb.png",
@@ -127,13 +129,14 @@ export const AllProjects = [
         projectTagline: "Revolutionizing education by generating AI-driven educational videos.",
         mediaData: [
             {
-                type: "image",
-                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733399943/web%20projects/tso3adqiiu1taxyhxh3o.png",
-            },
-            {
                 type: "video",
                 url: "https://res.cloudinary.com/de1yfnzdz/video/upload/v1733400020/web%20projects/bhqrmie6ed0z8wzxjqe4.mp4"
             },
+            {
+                type: "image",
+                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733399943/web%20projects/tso3adqiiu1taxyhxh3o.png",
+            },
+
             {
                 type: "image",
                 url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733399944/web%20projects/liv5acsdciwxysl2axvy.png",
@@ -167,13 +170,14 @@ export const AllProjects = [
         projectTagline: "TV and Series Showcase",
         mediaData: [
             {
-                type: "image",
-                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733326362/web%20projects/gr8tctu0xsiu5ews4dfi.png",
-            },
-            {
                 type: "video",
                 url: "https://res.cloudinary.com/de1yfnzdz/video/upload/v1733405469/web%20projects/wlsq4uddb2j7kwjnqhvv.mp4"
             },
+            {
+                type: "image",
+                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733326362/web%20projects/gr8tctu0xsiu5ews4dfi.png",
+            },
+
             {
                 type: "image",
                 url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733326362/web%20projects/ypgucytrauocjogurgqu.png",
@@ -247,13 +251,14 @@ export const AllProjects = [
         projectTagline: "Enhancing e-commerce by allowing users to virtually try clothes before purchasing.",
         mediaData: [
             {
-                type: "image",
-                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733358950/web%20projects/or882vwfzuiodutmglcn.png",
-            },
-            {
                 type: "video",
                 url: "https://res.cloudinary.com/de1yfnzdz/video/upload/v1733359320/web%20projects/h4c3njmsic8x017vlqjy.mp4"
             },
+            {
+                type: "image",
+                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733358950/web%20projects/or882vwfzuiodutmglcn.png",
+            },
+
             {
                 type: "image",
                 url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733359155/web%20projects/xm57nfae0zmpab8socjc.png",
@@ -286,13 +291,14 @@ export const AllProjects = [
         projectTagline: "Real-time Communication",
         mediaData: [
             {
-                type: "image",
-                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733358387/web%20projects/rsmsml66prcm4isrpo5d.png",
-            },
-            {
                 type: "video",
                 url: "https://res.cloudinary.com/de1yfnzdz/video/upload/v1733358808/web%20projects/qsjl6vxbawaziymywg2r.mp4"
             },
+            {
+                type: "image",
+                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733358387/web%20projects/rsmsml66prcm4isrpo5d.png",
+            },
+
             {
                 type: "image",
                 url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733358608/web%20projects/jvu9f2pi7gs4gr3sg94v.png",
@@ -324,13 +330,14 @@ export const AllProjects = [
         projectTagline: "Search and view GitHub user profiles",
         mediaData: [
             {
+                type: "video",
+                url: "https://res.cloudinary.com/de1yfnzdz/video/upload/v1733327031/web%20projects/dna9spxqcrl5y0ekoqnf.mp4"
+            },
+            {
                 type: "image",
                 url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733327037/web%20projects/wtygvqkmz6uptq7y9el7.png",
             },
-            {
-                type: "vide",
-                url: "https://res.cloudinary.com/de1yfnzdz/video/upload/v1733327031/web%20projects/dna9spxqcrl5y0ekoqnf.mp4"
-            },
+
             {
                 type: "image",
                 url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733327035/web%20projects/qfmngupdc2av76p0hldt.png",
@@ -363,13 +370,14 @@ export const AllProjects = [
         projectTagline: "Manage Tasks with Ease",
         mediaData: [
             {
-                type: "image",
-                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733325611/web%20projects/uuie4pxsg79fafxlgmrp.png",
-            },
-            {
                 type: "video",
                 url: "https://res.cloudinary.com/de1yfnzdz/video/upload/v1733414129/web%20projects/dxvjmsmsd9zpd1wwbpfp.mp4"
             },
+            {
+                type: "image",
+                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733325611/web%20projects/uuie4pxsg79fafxlgmrp.png",
+            },
+
             {
                 type: "image",
                 url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733325611/web%20projects/ztelqxixzcggm5zqjxu6.png",
@@ -402,13 +410,14 @@ export const AllProjects = [
         projectTagline: "Text File Compressor and Decompressor",
         mediaData: [
             {
-                type: "image",
-                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733441271/web%20projects/h71sdlb1vx9o2a0udoxg.jpg",
-            },
-            {
                 type: "video",
                 url: "https://res.cloudinary.com/de1yfnzdz/video/upload/v1733442446/web%20projects/bjlm2cnxhhuac0pkihx5.mp4"
             },
+            {
+                type: "image",
+                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733441271/web%20projects/h71sdlb1vx9o2a0udoxg.jpg",
+            },
+
             {
                 type: "image",
                 url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1733441271/web%20projects/wws6lw0or73vz1qmgrdr.jpg",
