@@ -1,6 +1,6 @@
 import { lazy, Suspense, ReactElement } from "react";
 import { ThemeProvider } from "styled-components";
-import { darkTheme } from "./styles/Theme";
+import { lightTheme } from "./styles/Theme";
 import GlobalStyle from "./styles/GlobalStyle";
 import Layout from "./layout/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -100,7 +100,7 @@ const router = createBrowserRouter(routes, {
 // App component with theming and global styles
 function App(): ReactElement {
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={lightTheme}>
       <Suspense fallback={<LoadingSpinner />}>
         <GlobalStyle />
         <RouterProvider router={router} />

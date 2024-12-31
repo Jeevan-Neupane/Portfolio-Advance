@@ -61,7 +61,7 @@ export const Title = styled.h2`
 
 export const MetaInfo = styled.div`
   font-size: 1.2rem;
-  color: ${(props) => props.theme.lighttextColor};
+  color: ${(props) => props.theme.blogPage.lighttextColor};
   margin-bottom: 16px;
 `;
 
@@ -133,20 +133,20 @@ height:40rem;
 `
 
 
-export const CategoriesDiv=styled.div`
+export const CategoriesDiv = styled.div`
 display: flex;
 gap: 1rem;
 flex-wrap: wrap;
 
 `
 
-export const EachCategories=styled.p`
+export const EachCategories = styled.p`
 font-size: 1.2rem;
 border: 1px solid ${(props) => props.theme.borderColor};
 padding: 0.5rem 1rem;
 `
 
-export const TotalArticleNumber=styled.p`
+export const TotalArticleNumber = styled.p`
 margin: 1rem 0;
 font-size: 1.5rem;
 font-weight: bold;
