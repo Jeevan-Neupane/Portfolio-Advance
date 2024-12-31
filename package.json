@@ -1,10 +1,13 @@
 {
+  "homepage": "https://jeevanneupaneportfolio.github.io/Portfolio-Advance",
   "name": "my_portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
