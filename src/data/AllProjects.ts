@@ -443,7 +443,46 @@ export const AllProjects = [
             livePreview: null,
             showLiveLabel: false,
         },
+    },
+    {
+        id: 13,
+        projectTitle: "VideoGen",
+        projectTagline: "AI-Powered Video Generation with Dynamic Metadata",
+        mediaData: [
+            {
+                type: "video",
+                url: "https://www.youtube.com/watch?v=oVv0fhZarqw&ab_channel=6thSemester"
+            },
+            {
+                type: "image",
+                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1736261111/events/ti0rmr3vkv6bexgyqd3k.png",
+            },
+            {
+                type: "image",
+                url: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1736261124/events/gd0xzvglmepw3tvece4r.png",
+            },
+        ],
+        paragraphOne: "VideoGen is an innovative application that leverages the HeyGen API for creating videos with  avatar and the ChatGPT API for generating dynamic titles and descriptions. This project simplifies the video creation process for marketing, education, and other purposes.",
+        paragraphTwo: "The application features a user-friendly interface, allowing users to input their requirements, generate videos, and automatically receive engaging descriptions and titles for the content.",
+        features: [
+            "AI-driven video generation with  avatar",
+            "Dynamic title and description generation using ChatGPT",
+            "Intuitive and seamless user interface",
+            "Supports various use cases like marketing and education",
+        ],
+        technologies: [
+            { name: "ReactJS", link: "https://reactjs.org" },
+            { name: "FastAPI", link: "https://fastapi.tiangolo.com" },
+            { name: "HeyGen API", link: "https://www.heygen.com" },
+            { name: "ChatGPT API", link: "https://platform.openai.com" },
+        ],
+        projectLinks: {
+            github: "https://github.com/Jeevan-Neupane/videogen_project",
+            livePreview: null,
+            showLiveLabel: false,
+        },
     }
+
 
 
 

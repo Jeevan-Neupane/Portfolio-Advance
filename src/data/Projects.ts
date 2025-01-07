@@ -75,7 +75,16 @@ export const AIMLProjects = [
         github: "https://github.com/Jeevan-Neupane/viton_frontend",
         description: "A virtual try-on system that allows users to upload their image and see clothes fit virtually before purchasing.",
         technologies: ["Deep Learning", "Pytorch", "FastAPI", "ReactJS"]
+    },
+    {
+        name: "VideoGen",
+        type: "Hackathon",
+        image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1736261111/events/ti0rmr3vkv6bexgyqd3k.png",
+        github: "https://github.com/Jeevan-Neupane/videogen",
+        description: "A platform that leverages HeyGen API to create videos using avatars and ChatGPT API to generate dynamic descriptions and titles for personalized video content.",
+        technologies: ["HeyGen API", "ChatGPT API", "FastAPI", "ReactJS"]
     }
+
 
 
 
