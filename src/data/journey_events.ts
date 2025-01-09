@@ -1,5 +1,14 @@
 export const events = [
     {
+        date: '2025-01-07',
+        title: "HAICon 2025 Participation",
+        description: "Participated in the two-day HAICon 2025 event in Kathmandu, Nepal, focused on the transformative role of AI in healthcare. The conference brought together global experts to explore innovative solutions for healthcare challenges, with a special emphasis on improving access and quality in low-resource settings. It was an incredible opportunity to collaborate with thought leaders and contribute to shaping the future of AI-powered healthcare on a global scale.",
+        images: [
+            "https://res.cloudinary.com/de1yfnzdz/image/upload/v1736435299/events/bvwexvbogbodw16qd4el.png",
+            "https://res.cloudinary.com/de1yfnzdz/image/upload/v1736435297/events/m4lxbmk2agrg9hxsob6j.jpg"
+        ],
+    },
+    {
         date: '2024-12-03',
         title: "APIE Camp @UB 2025 Participation Selection",
         description: "I have been selected to participate in the APIE Camp at Universitas Brawijaya (UB) in Malang, Indonesia, to gain hands-on experience in network deployment, cloud computing, and security.",
