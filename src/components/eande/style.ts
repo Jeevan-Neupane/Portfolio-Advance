@@ -46,6 +46,7 @@ ${mediumScreen(`
 
 export const ExperienceContainer = styled.div`
 flex:1;
+margin-top: 10rem;
 ${mediumScreen(`
     width: 80%;
     

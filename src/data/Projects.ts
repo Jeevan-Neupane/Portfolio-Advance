@@ -78,7 +78,7 @@ export const AIMLProjects = [
     },
     {
         name: "VideoGen",
-        type: "Hackathon",
+        type: "Personal",
         image: "https://res.cloudinary.com/de1yfnzdz/image/upload/v1736261111/events/ti0rmr3vkv6bexgyqd3k.png",
         github: "https://github.com/Jeevan-Neupane/videogen",
         description: "A platform that leverages HeyGen API to create videos using avatars and ChatGPT API to generate dynamic descriptions and titles for personalized video content.",

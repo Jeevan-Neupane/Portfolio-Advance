@@ -2,12 +2,22 @@ export const events = [
     {
         date: '2025-01-07',
         title: "HAICon 2025 Participation",
-        description: "Participated in the two-day HAICon 2025 event in Kathmandu, Nepal, focused on the transformative role of AI in healthcare. The conference brought together global experts to explore innovative solutions for healthcare challenges, with a special emphasis on improving access and quality in low-resource settings. It was an incredible opportunity to collaborate with thought leaders and contribute to shaping the future of AI-powered healthcare on a global scale.",
+        description: "Attended HAICon 2025 in Kathmandu, Nepal, focused on AI's role in healthcare. The event brought global experts together to discuss innovative solutions, emphasizing improved access and quality in low-resource settings.",
         images: [
             "https://res.cloudinary.com/de1yfnzdz/image/upload/v1736435299/events/bvwexvbogbodw16qd4el.png",
             "https://res.cloudinary.com/de1yfnzdz/image/upload/v1736435297/events/m4lxbmk2agrg9hxsob6j.jpg"
         ],
     },
+    {
+        date: '2024-12-21',
+        title: "AI in Healthcare Workshop Participation",
+        description: "Attended a two-day workshop on 'AI in Healthcare' organized by NAAMII & BPEF in Bhaktapur, Nepal. The workshop covered AI/ML fundamentals, medical data challenges, ethical considerations, and hands-on coding activities, along with research paper presentations on AI model deployment and evaluation.",
+        images: [
+            "https://res.cloudinary.com/de1yfnzdz/image/upload/v1738627805/events/de87piv2rsm8a4mieoyv.jpg",
+            "https://res.cloudinary.com/de1yfnzdz/image/upload/v1738627804/events/amkdit7zcscfidbcndnt.jpg"
+        ],
+    },
+
     {
         date: '2024-12-03',
         title: "APIE Camp @UB 2025 Participation Selection",
