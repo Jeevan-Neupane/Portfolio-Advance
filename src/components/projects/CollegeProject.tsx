@@ -65,6 +65,7 @@ function CollegeProjects() {
               github={project.github}
               technologies={project.technologies}
               type={project.type}
+              projectPath={`/works/college/${project.name}`}
             />
           ))}
       </ProjectsWrapper>

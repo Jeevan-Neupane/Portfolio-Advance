@@ -24,6 +24,7 @@ type ProjectProps = {
   type: string;
   technologies: string[];
   github: string;
+  projectPath?: string;
 };
 import { CiCircleMore } from "react-icons/ci";
 function Project({
@@ -33,6 +34,7 @@ function Project({
   github,
   technologies,
   type,
+  projectPath,
 }: ProjectProps) {
   return (
     <SingleProjectWrapper>
@@ -71,7 +73,17 @@ function Project({
         <Description>{description}</Description>
       </DescriptionDiv>
       <ExpoloreButtonOuterDiv>
-        <ExpoloreButtonDiv to={`${name}`}>
+        <ExpoloreButtonDiv
+          to={projectPath ?? `${name}`}
+          onClick={() => {
+            if (window.location.pathname === "/") {
+              window.sessionStorage.setItem(
+                "homeScrollRestoreY",
+                String(window.scrollY)
+              );
+            }
+          }}
+        >
           <G_Button
             icon={<CiCircleMore />}
             text='Explore More'

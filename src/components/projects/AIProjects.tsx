@@ -65,6 +65,7 @@ function AIProjects() {
               github={project.github}
               technologies={project.technologies}
               type={project.type}
+              projectPath={`/works/ai_ml/${project.name}`}
             />
           ))}
       </ProjectsWrapper>

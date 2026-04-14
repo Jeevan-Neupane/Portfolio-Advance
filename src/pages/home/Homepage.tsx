@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import HomeBackgroundCanvas from "../../components/home/background/HomeBackgroundCanvas";
 import EandE from "../../components/eande/EandE";
@@ -36,7 +36,24 @@ const Homepage = () => {
   const [activeProjectType, setActiveProjectType] =
     useState<ProjectFilterType>("ai_ml");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (location.hash) {
+      return;
+    }
+
+    const savedScrollY = window.sessionStorage.getItem("homeScrollRestoreY");
+    if (!savedScrollY) {
+      return;
+    }
+
+    const scrollY = Number.parseInt(savedScrollY, 10);
+    if (!Number.isNaN(scrollY)) {
+      window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
+    }
+    window.sessionStorage.removeItem("homeScrollRestoreY");
+  }, [location.hash]);
+
+  useLayoutEffect(() => {
     if (!location.hash) {
       return;
     }
@@ -48,10 +65,7 @@ const Homepage = () => {
       return;
     }
 
-    // Delay one frame to ensure lazy section content is mounted before scrolling.
-    window.requestAnimationFrame(() => {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+    target.scrollIntoView({ behavior: "auto", block: "start" });
   }, [location.hash]);
 
   return (

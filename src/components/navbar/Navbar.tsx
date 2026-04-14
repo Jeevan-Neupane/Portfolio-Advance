@@ -6,8 +6,10 @@ import { FaPen } from "react-icons/fa";
 import { MenuHeader, PrimaryMenu } from "./style";
 import Navitems from "./Navitems";
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const NavItems = useMemo(
     () => [
       { to: "/#home", hash: "#home", name: "Home", Icon: FaHome },
@@ -60,7 +62,11 @@ const Navbar = () => {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
       window.history.replaceState(null, "", `/${hash}`);
       setActiveHash(hash);
+      return;
     }
+
+    navigate(`/${hash}`);
+    setActiveHash(hash);
   };
 
   return (

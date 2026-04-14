@@ -14,9 +14,11 @@ import { MdEmail } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
 import MobileNavItems from "./MobileNavItems";
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function MobileNavbar() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const NavItems = useMemo(
     () => [
       { to: "/#home", hash: "#home", name: "Home", Icon: FaHome },
@@ -72,6 +74,9 @@ function MobileNavbar() {
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
       window.history.replaceState(null, "", `/${hash}`);
+      setActiveHash(hash);
+    } else {
+      navigate(`/${hash}`);
       setActiveHash(hash);
     }
 

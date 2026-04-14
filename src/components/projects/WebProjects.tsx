@@ -58,6 +58,7 @@ function WebProjects() {
               github={project.github}
               technologies={project.technologies}
               type={project.type}
+              projectPath={`/works/web/${project.name}`}
             />
           ))}
       </ProjectsWrapper>

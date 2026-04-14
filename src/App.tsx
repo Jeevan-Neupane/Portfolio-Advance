@@ -13,6 +13,9 @@ import OpenBanner from "./components/OpenBanner/OpenBanner";
 
 // Lazy load pages
 const Homepage = lazy(() => import("./pages/home/Homepage"));
+const SingleProjectPage = lazy(
+  () => import("./pages/singleProjectPage/SingleProjectPage")
+);
 
 // Higher-order function for wrapping lazy-loaded components in Suspense
 const withSuspense = (Component: React.FC): ReactElement => {
@@ -39,6 +42,10 @@ export const routes: Route[] = [
       {
         path: "/",
         element: <OpenBanner>{withSuspense(Homepage)}</OpenBanner>, // Homepage
+      },
+      {
+        path: "works/:projectType/:projectName",
+        element: <OpenBanner>{withSuspense(SingleProjectPage)}</OpenBanner>,
       },
       {
         path: "*",
