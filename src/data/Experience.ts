@@ -2,28 +2,39 @@ import { FaBriefcase } from "react-icons/fa";
 
 const MyExperiences = [
   {
-    title: "Research Intern",
-    place: "NAAMII",
-    description: "Integrating Swin-X2S into a benchmarking framework for Biplanar X-ray to 3D Reconstruction, optimizing code and evaluating performance.",
-    from: "2025-02-01",
-    to: "Present",
-    icon: FaBriefcase
-  }
-  ,
-  {
-    title: "Software Engineering Intern",
-    place: "IOE",
-    description: "Currently working as a Software Engineering Intern, contributing to software development and learning new technologies in a real-world environment.",
-    from: "2024-12-01",
+    title: "Fullstack Intern (Hybrid)",
+    place: "Fusemachine",
+    description:
+      "Building the Fuse AI Fellowship LMS across frontend, backend, database, API development, and testing.",
+    from: "2026-02-01",
     to: "Present",
     icon: FaBriefcase,
   },
   {
-    title: "Web Developer",
-    place: "Locus",
-    description: "Involved in building the Locus website, focusing on creating an intuitive, scalable, and user-friendly web platform.",
-    from: "2024-11-21",
-    to: "2025-01-26",
+    title: "Research Intern (Part Time)",
+    place: "NAAMII",
+    description:
+      "Researched medical imaging using DRR generation, mesh deformation, and transformer-based 3D reconstruction.",
+    from: "2025-02-01",
+    to: "2026-01-31",
+    icon: FaBriefcase,
+  },
+  {
+    title: "Teaching Assistant",
+    place: "Sixth Annual Nepal AI School (NAAMII)",
+    description:
+      "Supported LLM and Medical AI labs with hands-on implementation guidance and debugging help.",
+    from: "2025-12-01",
+    to: "2026-01-31",
+    icon: FaBriefcase,
+  },
+  {
+    title: "Software Engineering Intern (Part Time)",
+    place: "Institute of Engineering (IOE)",
+    description:
+      "Contributed to frontend development and technical documentation for an examination and result management system.",
+    from: "2024-12-01",
+    to: "2025-12-31",
     icon: FaBriefcase,
   },
 ];

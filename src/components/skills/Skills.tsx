@@ -1,11 +1,12 @@
-import Progress from "../../reusable_components/progress/Progress";
 import SmallTitle from "../../reusable_components/small_title/SmallTitle";
 import {
+  SkillChip,
+  SkillChipContainer,
+  SkillGroupCard,
+  SkillGroupTitle,
   SkillsContainer,
   SkillsSection,
   SkillsSetContainer,
-  SkillsSetItem,
-  SkillTitle,
 } from "./style";
 import SkillsSet from "../../data/Skills";
 import Seperator from "../../reusable_components/seprator/Seperator";
@@ -21,17 +22,15 @@ function Skills() {
           />
 
           <SkillsSetContainer>
-            {SkillsSet.map((skill, index) => (
-              <SkillsSetItem>
-                <Progress
-                  key={index}
-                  percentage={skill.percentage}
-                  width={skill.width}
-                  color={skill.color}
-                  textSize={skill.textSize}
-                />
-                <SkillTitle>{skill.name}</SkillTitle>
-              </SkillsSetItem>
+            {SkillsSet.map((skillGroup) => (
+              <SkillGroupCard key={skillGroup.category}>
+                <SkillGroupTitle>{skillGroup.category}</SkillGroupTitle>
+                <SkillChipContainer>
+                  {skillGroup.items.map((skill) => (
+                    <SkillChip key={skill}>{skill}</SkillChip>
+                  ))}
+                </SkillChipContainer>
+              </SkillGroupCard>
             ))}
           </SkillsSetContainer>
         </SkillsContainer>

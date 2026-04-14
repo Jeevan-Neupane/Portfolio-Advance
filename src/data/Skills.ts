@@ -1,21 +1,37 @@
+export type SkillGroup = {
+    category: string;
+    items: string[];
+};
 
-const SkillsSet = [
-    { name: "React.js", percentage: 80, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "Node.js", percentage: 70, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "TypeScript", percentage: 75, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "MongoDB", percentage: 65, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "Python", percentage: 60, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "AI/ML Tools", percentage: 70, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "Express.js", percentage: 70, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "FastAPI", percentage: 60, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "Docker", percentage: 50, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "AWS", percentage: 50, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "Redux", percentage: 65, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "Next.js", percentage: 60, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "Socket.io", percentage: 55, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "HTML/CSS", percentage: 80, color: "#72b626", textSize: "1.6rem", width: "10rem" },
-    { name: "SQL (MySQL)", percentage: 60, color: "#72b626", textSize: "1.6rem", width: "10rem" },
+const SkillsSet: SkillGroup[] = [
+    {
+        category: "Programming Languages",
+        items: ["Python", "C/C++", "JavaScript", "TypeScript"],
+    },
+    {
+        category: "Frontend",
+        items: ["React.js", "Next.js", "Redux", "HTML/CSS"],
+    },
+    {
+        category: "Backend",
+        items: ["Node.js", "Express.js", "FastAPI", "Socket.io", "Nest.js"],
+    },
+    {
+        category: "AI/ML",
+        items: ["NumPy", "Pandas", "Scikit-learn", "Matplotlib", "PyTorch"],
+    },
+    {
+        category: "Databases",
+        items: ["MongoDB", "MySQL"],
+    },
+    {
+        category: "Operating Systems",
+        items: ["Linux (Ubuntu, Debian)", "Windows"],
+    },
+    {
+        category: "DevOps & Cloud",
+        items: ["Docker", "AWS (Basic)"],
+    },
 ];
-
 
 export default SkillsSet;

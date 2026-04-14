@@ -2,12 +2,17 @@ import MySocialMedia from "../../data/Social_Media";
 import MediaIcons from "../../reusable_components/media_icons/MediaIcons";
 import { MediaIconsContainer } from "./style";
 
-function Social_Media() {
+type SocialMediaProps = {
+  floating?: boolean;
+};
+
+function Social_Media({ floating = false }: SocialMediaProps) {
   return (
-    <MediaIconsContainer>
-      {MySocialMedia.map((item) => {
+    <MediaIconsContainer $floating={floating}>
+      {MySocialMedia.map((item, index) => {
         return (
           <MediaIcons
+            key={index}
             href={item.href}
             icon={<item.icon />}
           />

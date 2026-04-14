@@ -15,8 +15,8 @@ export const personalInfoRight = [
 ];
 
 export const achievements = [
-    { year: "2", title: "Years of", subtitle: "Web Development Experience" },
-    { year: "3", title: "Hackathon", subtitle: "Awards Won" },
-    { year: "1", title: "AI & ML", subtitle: "Projects Completed" },
-    { year: "5", title: "Programming Languages", subtitle: "Learned" },
+    { year: "2", title: "Years of", subtitle: "Industry Internship Experience" },
+    { year: "2000", title: "Users Supported", subtitle: "Through Event Platform Delivery" },
+    { year: "3", title: "Hackathon Wins", subtitle: "In AI and Data Science Tracks" },
+    { year: "6", title: "End-to-End", subtitle: "Full-Stack and AI Projects Built" },
 ];

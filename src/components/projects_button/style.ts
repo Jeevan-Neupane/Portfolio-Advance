@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 type styleTypeProps = {
   isActive: boolean;
@@ -36,7 +35,7 @@ export const ProjectButton = styled.button<styleTypeProps>`
 
 `;
 
-export const ProjectButtonLink = styled(Link)`
+export const ProjectButtonLink = styled.a`
   text-decoration: none;
   color: ${(props) => props.theme.lighttextColor};
 

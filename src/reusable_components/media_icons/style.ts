@@ -12,7 +12,8 @@ export const IconDiv = styled.div`
   color: ${(props) => props.theme.lighttextColor};
   padding: 1rem;
   border-radius: 50%;
-background-color:#eeeeee;
+  background-color: ${(props) => props.theme.lightBackground};
+  border: 1px solid ${(props) => props.theme.borderColor};
 font-size: 1.6rem;
 transition: 0.3s ease-in-out; 
 

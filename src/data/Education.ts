@@ -4,9 +4,17 @@ const MyEducation = [
     {
         title: "Bachelor's Degree",
         place: "Pulchowk Campus",
-        description: "I am currently studying Bachelor's Degree in Computer Engineering from Pulchowk Campus.",
-        from: "2022",
-        to: "2026",
+        description: "Continued Bachelor's Degree in Computer Engineering at Pulchowk Campus, IOE.",
+        from: "2023-04-01",
+        to: "2026-04-01",
+        icon: FaGraduationCap
+    },
+    {
+        title: "Bachelor's Degree",
+        place: "Purwanchal Campus, IOE",
+        description: "Started Bachelor's Degree in Computer Engineering at Purwanchal Campus, IOE.",
+        from: "2022-04-01",
+        to: "2023-04-01",
         icon: FaGraduationCap
     }
     ,
@@ -14,8 +22,8 @@ const MyEducation = [
         title: "+2",
         place: "Xavier International College",
         description: "I completed my Higher Secondary Education from Xavier International College in 2020.",
-        from: "2018",
-        to: "2020",
+        from: "2018-06-01",
+        to: "2021-01-29",
         icon: FaGraduationCap
     },
     {

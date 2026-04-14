@@ -5,12 +5,21 @@ type NavProps = {
   to: string;
   name: string;
   Icon: ElementType;
+  isActive: boolean;
+  onNavigate: (to: string) => void;
 };
 
-const Navitems = ({ to, name, Icon }: NavProps) => {
+const Navitems = ({ to, name, Icon, isActive, onNavigate }: NavProps) => {
   return (
     <MenuItem>
-      <MenuLink to={`/${to}`}>
+      <MenuLink
+        to={to}
+        $isActive={isActive}
+        onClick={(event) => {
+          event.preventDefault();
+          onNavigate(to);
+        }}
+      >
         <MenuName>{name}</MenuName>
         <Icon />
       </MenuLink>

@@ -11,16 +11,15 @@ const Intro = () => {
     <TextDiv>
       <NameRoleDiv>
         I'M Jeevan Neupane
-        <span>Web Developer & AI Enthusiast </span>
+        <span>Full-Stack Developer & AI Engineer </span>
       </NameRoleDiv>
 
       <ProfileDiv>
-        I am a web developer with a focus on the MERN stack and a passion for AI. I build user-friendly, scalable
-        web applications and am constantly exploring cloud and AI technologies to enhance my work.
+        Full-Stack Developer & AI Engineer focused on building intelligent, scalable applications combining web technologies and AI.
       </ProfileDiv>
 
       <Button
-        to='/about_me'
+        to='/#about'
         text='More About Me'
         icon={<FaRegArrowAltCircleRight />}
       />

@@ -20,12 +20,12 @@ padding: 2rem;
 export const YearsBox = styled.h3`
 display: inline-block;
   margin: 0;
-  font-size: 5rem;
+  font-size: 4.2rem;
   font-weight: 700;
   line-height: 110%;
 
   span{
-    font-size: 3.3rem;
+    font-size: 2.8rem;
   }
     color:${promps => promps.theme.specialColor};
 `
@@ -33,6 +33,8 @@ display: inline-block;
 export const TitleText = styled.p`
 text-transform:uppercase;
 position: relative;
+font-size: 1.35rem;
+line-height: 1.45;
 
 
 &::before{

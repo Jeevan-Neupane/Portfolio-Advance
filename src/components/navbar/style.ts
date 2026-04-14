@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { extraLargeScreen, largeScreen } from "../../styles/responsive";
 
 export const MenuHeader = styled.div`
@@ -88,24 +88,21 @@ export const MenuName = styled.span`
     
    
 `
-export const MenuLink = styled(NavLink)`
+export const MenuLink = styled(Link)<{ $isActive?: boolean }>`
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  background-color: ${(props) => props.theme.lightBackground};
+  background-color: ${(props) =>
+    props.$isActive ? props.theme.specialColor : props.theme.lightBackground};
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${(props) => props.theme.lighttextColor};
+  color: ${(props) => (props.$isActive ? "white" : props.theme.lighttextColor)};
   text-decoration: none;
   font-size: 2rem;
   transition: 0.3s;
 
   &:hover {
-    background-color: ${(props) => props.theme.specialColor};
-  }
-
-  &.active {
     background-color: ${(props) => props.theme.specialColor};
     color: white;
   }
@@ -163,18 +160,14 @@ margin:1rem;
 
 `
 
-export const MobileMenuLink = styled(NavLink)`
+export const MobileMenuLink = styled(Link)<{ $isActive?: boolean }>`
   text-decoration: none;
-  color: ${({ theme }) => theme.mobileNavbarColor.menuBarColor};
+  color: ${({ theme, $isActive }) =>
+    $isActive ? theme.whiteTextColor : theme.mobileNavbarColor.menuBarColor};
   font-size: 2rem;
   display:flex;
   align-items:center;
   gap:3rem;
-
-  &.active {
-    background-color: ${(props) => props.theme.specialColor};
-    color: white;
-  }
 
   &:hover{
     background-color:${props => props.theme.specialColor};

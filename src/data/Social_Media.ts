@@ -1,6 +1,7 @@
 import { FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
 const MySocialMedia = [
 
@@ -19,6 +20,10 @@ const MySocialMedia = [
     {
         href: "https://www.youtube.com/@6thSemester-y9x",
         icon: FaYoutube
+    },
+    {
+        href: "mailto:jeevan.neupane003@gmail.com",
+        icon: MdEmail
     },
 
 ]

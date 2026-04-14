@@ -13,22 +13,71 @@ import { FaSuitcase } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
 import MobileNavItems from "./MobileNavItems";
-import { GiJourney } from "react-icons/gi";
+import { useEffect, useMemo, useState } from "react";
 
 function MobileNavbar() {
   const dispatch = useDispatch();
-  const NavItems = [
-    { to: "", name: "Home", Icon: FaHome },
-    { to: "about_me", name: "About", Icon: IoPersonSharp },
-    { to: "works/web", name: "Work", Icon: FaSuitcase },
-    { to: "contact", name: "Contact", Icon: MdEmail },
-    { to: "blogs", name: "Blog", Icon: FaPen },
-    { to: "journey", name: "Journey", Icon: GiJourney}
-  ];
+  const NavItems = useMemo(
+    () => [
+      { to: "/#home", hash: "#home", name: "Home", Icon: FaHome },
+      { to: "/#about", hash: "#about", name: "About", Icon: IoPersonSharp },
+      { to: "/#works", hash: "#works", name: "Work", Icon: FaSuitcase },
+      { to: "/#blogs", hash: "#blogs", name: "Blog", Icon: FaPen },
+      { to: "/#contact", hash: "#contact", name: "Contact", Icon: MdEmail },
+    ],
+    []
+  );
+  const [activeHash, setActiveHash] = useState<string>("#home");
+
+  useEffect(() => {
+    const detectActiveSection = () => {
+      const triggerPoint = window.scrollY + 160;
+      let current = "#home";
+
+      for (const item of NavItems) {
+        const sectionId = item.hash.replace("#", "");
+        const section = document.getElementById(sectionId);
+
+        if (!section) {
+          continue;
+        }
+
+        if (triggerPoint >= section.offsetTop) {
+          current = item.hash;
+        }
+      }
+
+      setActiveHash(current);
+    };
+
+    detectActiveSection();
+    window.addEventListener("scroll", detectActiveSection, { passive: true });
+    window.addEventListener("resize", detectActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", detectActiveSection);
+      window.removeEventListener("resize", detectActiveSection);
+    };
+  }, [NavItems]);
 
   const handleToggle = () => {
     dispatch(toggleNavbar());
   };
+
+  const handleNavigate = (to: string) => {
+    const hash = to.includes("#") ? to.slice(to.indexOf("#")) : "#home";
+    const sectionId = hash.replace("#", "");
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", `/${hash}`);
+      setActiveHash(hash);
+    }
+
+    dispatch(toggleNavbar());
+  };
+
   return (
     <SmallDeviceMenuBar>
       <CloseBarDiv
@@ -47,6 +96,8 @@ function MobileNavbar() {
               to={item.to}
               name={item.name}
               Icon={item.Icon}
+              isActive={activeHash === item.hash}
+              onNavigate={handleNavigate}
             />
           ))}
         </MobilePrimaryMenu>

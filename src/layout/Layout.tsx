@@ -9,6 +9,7 @@ import { closeNavbar, toggleNavbar } from "../store/store";
 import MobileNavbar from "../components/navbar/MobileNavbar";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Social_Media from "../components/social_media_icons/Social_Media";
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ const Layout = () => {
       </MenuBarIcon>
       {isOpen && <MobileNavbar />}
       <Navbar />
+      <Social_Media floating />
       <Outlet />
     </MainDiv>
   );

@@ -6,7 +6,7 @@ list-style: none;
   margin: 0;
   position: relative;
   font-weight: 400 !important;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   display: flex;
   gap: 1rem;
   margin-bottom: 1.6rem;
@@ -22,4 +22,5 @@ export const InfoDiv = styled.span`
 color:${props => props.theme.lighttextColor};
 opacity: .8;
   font-weight:600;
+  font-size: 1.35rem;
 `
