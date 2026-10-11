@@ -12,9 +12,9 @@ import {
 import {
   FiArrowUpRight,
   FiArrowRight,
+  FiArrowLeft,
   FiArrowDown,
   FiGithub,
-  FiLinkedin,
   FiDownload,
   FiMenu,
   FiX,
@@ -22,6 +22,15 @@ import {
   FiCheck,
   FiMapPin,
 } from "react-icons/fi";
+import {
+  FaGithub,
+  FaKaggle,
+  FaLinkedinIn,
+  FaMedium,
+  FaXTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
+import type { IconType } from "react-icons";
 import {
   projects,
   experience,
@@ -33,19 +42,31 @@ import {
   fieldPhotos,
   recentWork,
   internationalPrograms,
+  apieGlanceUrl,
+  mediumUrl,
+  socialLinks,
 } from "./portfolio-data";
 import { AllProjects } from "./data/AllProjects";
+import { ArticleBody, useMediumPosts } from "./medium";
 import "./portfolio.css";
 
 const email = "jeevan.neupane003@gmail.com";
 const external = { target: "_blank", rel: "noopener noreferrer" };
+const socialIcons: Record<string, IconType> = {
+  github: FaGithub,
+  linkedin: FaLinkedinIn,
+  medium: FaMedium,
+  kaggle: FaKaggle,
+  x: FaXTwitter,
+  youtube: FaYoutube,
+};
 function PageEffects() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
     document.title =
       pathname === "/"
-        ? "Jeevan Neupane — AI / ML & Software Engineer"
-        : `${pathname.startsWith("/projects/") ? projects.find((p) => pathname.endsWith(p.slug))?.title || "Project" : pathname.slice(1).replace(/^./, (c) => c.toUpperCase())} — Jeevan Neupane`;
+        ? "Jeevan Neupane | AI/ML & Software Engineer"
+        : `${pathname.startsWith("/projects/") ? projects.find((p) => pathname.endsWith(p.slug))?.title || "Project" : pathname.split("/")[1].replace(/^./, (c) => c.toUpperCase())} | Jeevan Neupane`;
     if (hash)
       requestAnimationFrame(() =>
         document.getElementById(hash.slice(1))?.scrollIntoView({
@@ -73,9 +94,16 @@ function PageEffects() {
 }
 function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const location = useLocation();
   useEffect(() => setOpen(false), [location]);
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 10);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
   useEffect(() => {
     const close = (event: KeyboardEvent) => {
       if (event.key === "Escape" && open) {
@@ -87,72 +115,67 @@ function Header() {
     return () => window.removeEventListener("keydown", close);
   }, [open]);
   return (
-    <header className="header">
-      <Link className="brand" to="/" aria-label="Jeevan Neupane home">
-        <span className="brand-mark">jn.</span>
-        <span className="brand-name">Jeevan Neupane</span>
-      </Link>
-      <button
-        ref={menuButton}
-        className="menu-toggle"
-        aria-label={open ? "Close navigation" : "Open navigation"}
-        aria-expanded={open}
-        aria-controls="navigation"
-        onClick={() => setOpen(!open)}
-      >
-        {open ? <FiX /> : <FiMenu />}
-      </button>
-      <nav id="navigation" className={open ? "nav open" : "nav"}>
-        <NavLink to="/" end>
-          Home
-        </NavLink>
-        <NavLink to="/projects">Work</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/research">Research</NavLink>
-        <Link className="nav-contact" to="/#contact">
-          Get in touch <FiArrowUpRight />
+    <div className={scrolled ? "header-bar scrolled" : "header-bar"}>
+      <header className="header">
+        <Link className="brand" to="/" aria-label="Jeevan Neupane home">
+          <span className="brand-mark">jn.</span>
+          <span className="brand-name">Jeevan Neupane</span>
         </Link>
-      </nav>
-    </header>
-  );
-}
-function Label({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="eyebrow">
-      <span />
-      {children}
+        <button
+          ref={menuButton}
+          className="menu-toggle"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-expanded={open}
+          aria-controls="navigation"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <FiX /> : <FiMenu />}
+        </button>
+        <nav id="navigation" className={open ? "nav open" : "nav"}>
+          <NavLink to="/" end>
+            Home
+          </NavLink>
+          <NavLink to="/projects">Work</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/research">Research</NavLink>
+          <NavLink to="/writing">Writing</NavLink>
+          <Link className="nav-contact" to="/#contact">
+            Get in touch <FiArrowUpRight />
+          </Link>
+        </nav>
+      </header>
     </div>
   );
 }
-function ProjectCard({
-  project,
-  index,
-}: {
-  project: (typeof projects)[number];
-  index: number;
-}) {
+function Label({ children }: { children: React.ReactNode }) {
+  return <div className="eyebrow">{children}</div>;
+}
+function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
     <Link
       className={`project-card project-${project.slug}`}
       to={`/projects/${project.slug}`}
     >
-      <div className="project-image">
-        <img
-          src={project.image}
-          alt={project.alt}
-          loading="lazy"
-          width="900"
-          height="600"
-        />
-        <span className="project-number">
-          0{index + 1} / {project.category}
-        </span>
+      <div
+        className={project.image ? "project-image" : "project-image no-image"}
+      >
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.alt}
+            loading="lazy"
+            width="900"
+            height="600"
+          />
+        ) : (
+          <span className="repo-path">
+            {project.url?.replace("https://", "")}
+          </span>
+        )}
+        <span className="project-number">{project.category}</span>
         <span className="circle-arrow">
           <FiArrowUpRight />
         </span>
-        {project.illustration && (
-          <span className="image-caption">Concept illustration</span>
-        )}
       </div>
       <div className="project-copy">
         <div className="project-meta">
@@ -172,9 +195,8 @@ function ProjectCard({
 function Experience() {
   return (
     <div className="experience-list">
-      {experience.map((item, i) => (
+      {experience.map((item) => (
         <article className="experience-item" key={item.company}>
-          <span className="experience-index">0{i + 1}</span>
           <div>
             <h3>{item.role}</h3>
             <p className="company">
@@ -208,11 +230,8 @@ function Contact() {
   }
   return (
     <section id="contact" className="contact section reveal">
-      <Label>CONTACT</Label>
       <div className="contact-heading">
-        <h2>
-          Let’s talk <em>about the work.</em>
-        </h2>
+        <h2>Contact</h2>
         <a
           className="contact-orb"
           href={`mailto:${email}`}
@@ -222,8 +241,8 @@ function Contact() {
         </a>
       </div>
       <p className="contact-intro">
-        For engineering roles, research collaborations, or a conversation about
-        healthcare AI — send me a note.
+        For engineering roles, research collaborations or questions about
+        healthcare AI, email me.
       </p>
       <div className="contact-bottom">
         <div>
@@ -249,7 +268,25 @@ function Contact() {
           <FiMapPin /> Kathmandu, Nepal
         </span>
       </div>
+      <div className="contact-social">
+        <span>ELSEWHERE</span>
+        <SocialLinks className="social-pills" />
+      </div>
     </section>
+  );
+}
+function SocialLinks({ className }: { className: string }) {
+  return (
+    <div className={className}>
+      {socialLinks.map(({ id, label, url }) => {
+        const Icon = socialIcons[id];
+        return (
+          <a key={id} href={url} {...external}>
+            <Icon aria-hidden="true" /> {label}
+          </a>
+        );
+      })}
+    </div>
   );
 }
 function Footer() {
@@ -258,29 +295,91 @@ function Footer() {
       <Link className="brand" to="/">
         jn<span>.</span>
       </Link>
-      <p>AI, software, and things I’m working on.</p>
       <div>
-        <a href="https://github.com/Jeevan-Neupane" {...external}>
-          GitHub <FiArrowUpRight />
-        </a>
-        <a href={linkedinUrl} {...external}>
-          LinkedIn <FiArrowUpRight />
-        </a>
+        {socialLinks.map(({ id, label, url }) => (
+          <a key={id} href={url} {...external}>
+            {label} <FiArrowUpRight />
+          </a>
+        ))}
         <span>© {new Date().getFullYear()} Jeevan Neupane</span>
       </div>
     </footer>
+  );
+}
+function PostList({ limit }: { limit?: number }) {
+  const { status, posts, retry } = useMediumPosts();
+  if (status === "loading")
+    return (
+      <div className="post-list" aria-busy="true">
+        {Array.from({ length: limit ?? 3 }, (_, i) => (
+          <div className="post-row post-skeleton" key={i} aria-hidden="true">
+            <i />
+            <div>
+              <i />
+              <i />
+            </div>
+          </div>
+        ))}
+        <span className="sr-only" role="status">
+          Loading articles from Medium…
+        </span>
+      </div>
+    );
+  if (status === "error" || !posts.length)
+    return (
+      <div className="post-empty">
+        <p>
+          {status === "error"
+            ? "My Medium articles couldn’t load just now."
+            : "No articles yet."}
+        </p>
+        {status === "error" && (
+          <button className="button secondary" onClick={retry}>
+            Try again
+          </button>
+        )}
+        <a className="text-link" href={mediumUrl} {...external}>
+          Read on Medium <FiArrowUpRight />
+        </a>
+      </div>
+    );
+  return (
+    <div className="post-list">
+      {posts.slice(0, limit).map((post) => (
+        <Link className="post-row" to={`/writing/${post.slug}`} key={post.slug}>
+          <div className="post-meta">
+            <time>{post.date}</time>
+            <span>{post.minutes} min read</span>
+          </div>
+          <div className="post-copy">
+            <h3>{post.title}</h3>
+            <p>{post.excerpt}</p>
+            <div className="tags">
+              {post.categories.slice(0, 3).map((c) => (
+                <span key={c}>{c.replace(/-/g, " ")}</span>
+              ))}
+            </div>
+          </div>
+          {post.cover ? (
+            <img
+              className="post-thumb"
+              src={post.cover}
+              alt=""
+              loading="lazy"
+            />
+          ) : (
+            <span className="post-thumb" aria-hidden="true" />
+          )}
+        </Link>
+      ))}
+    </div>
   );
 }
 function ActivitySection() {
   return (
     <section id="field-notes" className="section field-notes reveal">
       <div className="section-heading">
-        <div>
-          <Label>05 / PEOPLE & PLACES</Label>
-          <h2>
-            Away from <em>the desk.</em>
-          </h2>
-        </div>
+        <h2>Programs and events</h2>
         <a className="text-link" href={linkedinUrl} {...external}>
           More on LinkedIn <FiArrowUpRight />
         </a>
@@ -288,17 +387,15 @@ function ActivitySection() {
       <div className="field-story">
         <div>
           <span className="project-kicker">
-            IN-SPAN COHORT 2 · CHENNAI, 2026
+            IN-SPAN COHORT 2, CHENNAI, 2026
           </span>
-          <h3>Eight weeks at IIT Madras.</h3>
+          <h3>Eight weeks at IIT Madras</h3>
         </div>
         <div>
           <p>
-            I represented A.I. Lab at the IN-SPAN program, from sessions on
-            building a business to time with Deepaarogya AI, AI4Bharat, and
-            Agnikul. It gave me more to think about: the people using our
-            software, their workflows, and what it takes to run a healthcare
-            startup.
+            I represented A.I. Lab at IN-SPAN, an eight-week startup program at
+            IIT Madras Pravartak. We had sessions on business and fundraising,
+            and I spent time with Deepaarogya AI, AI4Bharat and Agnikul.
           </p>
           <a className="text-link" href={inspanPostUrl} {...external}>
             My notes from Chennai <FiArrowUpRight />
@@ -311,7 +408,7 @@ function ActivitySection() {
             <a
               href={inspanPostUrl}
               {...external}
-              aria-label={`${photo.caption} — view original LinkedIn post`}
+              aria-label={`${photo.caption}, view the original LinkedIn post`}
             >
               <img
                 src={photo.image}
@@ -345,18 +442,13 @@ function Home() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <Label>AI / ML & SOFTWARE ENGINEER</Label>
-          <h1>
-            Hi, I’m Jeevan<span className="accent">.</span>
-          </h1>
-          <p className="hero-lead">
-            I work on AI that has
-            <br />a job to do.
-          </p>
+          <Label>AI/ML AND SOFTWARE ENGINEER</Label>
+          <h1>Hi, I’m Jeevan.</h1>
+          <p className="hero-lead">I build AI for healthcare.</p>
           <p className="hero-intro">
-            Right now, that means helping turn Nepali-English clinical
-            conversations into medical notes. I’m the co-founder & CTO of A.I
-            Lab, based in Kathmandu.
+            I’m co-founder and CTO of A.I. Lab in Kathmandu. We’re building
+            Shruti, which turns Nepali-English conversations between doctors and
+            patients into medical notes.
           </p>
           <div className="hero-actions">
             <Link className="button primary" to="/#work">
@@ -370,14 +462,7 @@ function Home() {
               Download CV <FiDownload />
             </a>
           </div>
-          <div className="hero-social">
-            <a href="https://github.com/Jeevan-Neupane" {...external}>
-              <FiGithub /> GitHub <FiArrowUpRight />
-            </a>
-            <a href={linkedinUrl} {...external}>
-              <FiLinkedin /> LinkedIn <FiArrowUpRight />
-            </a>
-          </div>
+          <SocialLinks className="hero-social" />
         </div>
         <figure className="hero-portrait">
           <div className="portrait-frame">
@@ -390,91 +475,51 @@ function Home() {
             />
           </div>
           <figcaption>
-            <span>At IIT Madras · 2026</span>
+            <span>IIT Madras, 2026</span>
             <span>
               <FiMapPin /> Kathmandu, Nepal
             </span>
           </figcaption>
-          <span className="portrait-note">नमस्ते, nice to meet you.</span>
         </figure>
         <div className="hero-footnote">
           <span>
-            <span className="status-dot" /> Currently building{" "}
+            Now building{" "}
             <Link to="/projects/shruti">
-              Shruti at A.I Lab <FiArrowUpRight />
+              Shruti at A.I. Lab <FiArrowUpRight />
             </Link>
           </span>
-          <span>Computer Engineering · Pulchowk Campus ’26</span>
+          <span>Computer Engineering, Pulchowk Campus, 2026</span>
         </div>
       </section>
       <section id="work" className="section work-section reveal">
         <div className="section-heading">
-          <div>
-            <Label>01 / SELECTED WORK</Label>
-            <h2>
-              A few things I’ve <em>worked on.</em>
-            </h2>
-          </div>
+          <h2>Projects</h2>
           <Link className="text-link" to="/projects">
             All projects <FiArrowUpRight />
           </Link>
         </div>
         <Link className="featured-project" to="/projects/shruti">
-          <div
-            className="shruti-diagram"
-            aria-label="Shruti workflow: Nepali-English conversation, speech recognition and diarization, then structured clinical notes"
-          >
-            <div className="diagram-heading">
-              <span>
-                श्रुति <span>/ shruti</span>
-              </span>
-              <span>WORKFLOW STUDY</span>
-            </div>
-            <div className="audio-block">
-              <span className="diagram-label">01 / THE CONVERSATION</span>
-              <div className="waveform" aria-hidden="true">
-                {Array.from({ length: 48 }, (_, i) => (
-                  <i
-                    key={i}
-                    style={{ height: `${10 + Math.sin(i * 1.7) ** 2 * 47}px` }}
-                  />
-                ))}
-              </div>
-              <span className="audio-caption">
-                Nepali + English · Doctor + patient
-              </span>
-            </div>
-            <div className="diagram-connector">
-              <span />
-              <FiArrowDown />
-              <span>Speech recognition & diarization</span>
-            </div>
-            <div className="note-block">
-              <span className="diagram-label">
-                02 / STRUCTURED CLINICAL NOTES
-              </span>
-              <div aria-hidden="true">
-                <i />
-                <i />
-                <i />
-              </div>
-              <span>LLM note generation</span>
-            </div>
-            <span className="diagram-caption">
-              A simplified view of the system I’m building.
-            </span>
-          </div>
+          <figure className="featured-image">
+            <img
+              src="/images/shruti-emr.webp"
+              alt="Shruti's note screen in a demo clinic, showing a generated assessment and treatment plan"
+              width="720"
+              height="480"
+              loading="lazy"
+            />
+            <figcaption>
+              Shruti’s note screen, from A.I. Lab’s demo video.
+            </figcaption>
+          </figure>
           <div className="featured-copy">
-            <span className="project-kicker">CURRENT WORK · HEALTHCARE AI</span>
+            <span className="project-kicker">CURRENT WORK</span>
             <h3>Shruti</h3>
             <p className="featured-description">
-              From clinical conversations
-              <br />
-              to structured notes.
+              Turns doctor-patient conversations into structured clinical notes.
             </p>
             <p>
-              I’m working on the speech models, note-generation pipelines, and
-              backend that connect the two, including deployment and pilot
+              I work on the speech recognition models, the note generation
+              pipeline and the backend, and help with deployment and pilot
               testing with healthcare partners.
             </p>
             <div className="tags">
@@ -483,32 +528,27 @@ function Home() {
               <span>Backend APIs</span>
             </div>
             <span className="feature-link">
-              See what I’m building <FiArrowUpRight />
+              Read more <FiArrowUpRight />
             </span>
             <span className="project-status">
-              In development & pilot testing · 2025–present
+              In pilot testing, 2025 to present
             </span>
           </div>
         </Link>
         <div className="project-grid home-projects">
-          {projects.slice(1, 4).map((p, i) => (
-            <ProjectCard key={p.slug} project={p} index={i + 1} />
+          {projects.slice(1, 4).map((p) => (
+            <ProjectCard key={p.slug} project={p} />
           ))}
         </div>
       </section>
       <section id="about" className="section about-section reveal">
         <div>
-          <Label>02 / A BIT OF BACKGROUND</Label>
-          <h2>
-            From medical images
-            <br />
-            to <em>spoken language.</em>
-          </h2>
+          <h2>About</h2>
         </div>
         <div className="about-copy">
           <p className="large-copy">
-            I’m a Computer Engineering graduate from Pulchowk Campus. My work
-            spans machine learning research and the software around it.
+            I studied Computer Engineering at Pulchowk Campus. I’ve worked on
+            machine learning research and on software engineering.
           </p>
           <p>
             At NAAMII, I worked on reconstructing 3D bone shapes from X-rays and
@@ -516,8 +556,8 @@ function Home() {
             learning platform for the Fuse AI Fellowship.
           </p>
           <p>
-            Now at A.I Lab, I’m working with a different kind of data: the
-            Nepali-English conversations between doctors and patients.
+            At A.I. Lab, I work with Nepali-English conversations between
+            doctors and patients.
           </p>
           <Link className="text-link" to="/about">
             More about me <FiArrowUpRight />
@@ -526,12 +566,7 @@ function Home() {
       </section>
       <section id="experience" className="section experience-section reveal">
         <div className="section-heading">
-          <div>
-            <Label>03 / EXPERIENCE</Label>
-            <h2>
-              Where I’ve <em>contributed.</em>
-            </h2>
-          </div>
+          <h2>Experience</h2>
           <a className="text-link" href="/Jeevan-Neupane-CV.pdf" download>
             Full CV <FiDownload />
           </a>
@@ -540,34 +575,35 @@ function Home() {
       </section>
       <section className="research-banner reveal">
         <div>
-          <Label>04 / RESEARCH</Label>
-          <h2>
-            A closer look at
-            <br />
-            <em>medical imaging.</em>
-          </h2>
+          <h2>Research</h2>
           <p>
-            Alongside engineering, I’ve worked on deep learning for medical
-            images and 3D reconstruction.
+            I’ve worked on deep learning for medical images and 3D
+            reconstruction.
           </p>
           <Link className="text-link" to="/research">
             Research details <FiArrowUpRight />
           </Link>
         </div>
         <div className="paper-note">
-          <span>ACCEPTED POSTER · MIRASOL 2026</span>
+          <span>ACCEPTED POSTER, MIRASOL 2026</span>
           <h3>
             Large-Scale Pretraining for Improving Deep Learning-Based Geometric
             Distortion Correction of Diffusion-Weighted Imaging.
           </h3>
-          <p>MICCAI Workshop · 2026</p>
+          <p>MICCAI Workshop, 2026</p>
           <a className="text-link" href={paperUrl} {...external}>
             Read the paper <FiArrowUpRight />
           </a>
-          <span className="paper-mark" aria-hidden="true">
-            ↗
-          </span>
         </div>
+      </section>
+      <section id="writing" className="section writing-section reveal">
+        <div className="section-heading">
+          <h2>Writing</h2>
+          <Link className="text-link" to="/writing">
+            All articles <FiArrowUpRight />
+          </Link>
+        </div>
+        <PostList limit={3} />
       </section>
       <ActivitySection />
       <Contact />
@@ -582,14 +618,9 @@ function Projects() {
   return (
     <>
       <section className="section page-top">
-        <Label>THE PROJECT COLLECTION</Label>
-        <h1>
-          Selected <em>projects.</em>
-        </h1>
+        <h1>Projects</h1>
         <p className="page-intro">
-          A selection of healthcare AI, computer vision, and full-stack
-          projects. Explore the problem, my contribution, and the technology
-          behind each one.
+          Healthcare AI, computer vision and web projects I’ve worked on.
         </p>
         <div className="filters" aria-label="Filter projects">
           {["All work", "Healthcare AI", "Computer vision", "Full-stack"].map(
@@ -610,7 +641,7 @@ function Projects() {
         </p>
         <div className="project-grid">
           {filtered.map((p) => (
-            <ProjectCard key={p.slug} project={p} index={projects.indexOf(p)} />
+            <ProjectCard key={p.slug} project={p} />
           ))}
         </div>
       </section>
@@ -627,33 +658,27 @@ function ProjectDetail() {
     <>
       <section className="section page-top detail">
         <Link className="text-link back" to="/projects">
-          ← Back to all work
+          <FiArrowLeft /> All projects
         </Link>
         <Label>
-          {p.category.toUpperCase()} / {p.year}
+          {p.category.toUpperCase()}, {p.year.toUpperCase()}
         </Label>
-        <h1>
-          {p.title}
-          <span className="accent">.</span>
-        </h1>
+        <h1>{p.title}</h1>
         <p className="page-intro">{p.summary}</p>
         <div className="tags">
           {p.tags.map((t) => (
             <span key={t}>{t}</span>
           ))}
         </div>
-        <figure className="detail-image">
-          <img src={p.image} alt={p.alt} width="900" height="600" />
-          {p.illustration && (
-            <figcaption>
-              Concept illustration of the project’s focus; not a product
-              screenshot or research result.
-            </figcaption>
-          )}
-        </figure>
+        {p.image && (
+          <figure className="detail-image">
+            <img src={p.image} alt={p.alt} width="900" height="600" />
+            {p.caption && <figcaption>{p.caption}</figcaption>}
+          </figure>
+        )}
         <div className="detail-content">
           <aside>
-            <span className="eyebrow">PROJECT CONTEXT</span>
+            <span className="eyebrow">CONTEXT</span>
             <h3>{p.context}</h3>
             <p>{p.year}</p>
             {p.url && (
@@ -671,12 +696,10 @@ function ProjectDetail() {
                 <li key={c}>{c}</li>
               ))}
             </ul>
-            <h2>Engineering focus</h2>
-            <p>{p.focus}</p>
           </div>
         </div>
         <Link className="next-project" to={`/projects/${next.slug}`}>
-          <span>UP NEXT</span>
+          <span>NEXT PROJECT</span>
           <h2>
             {next.title} <FiArrowUpRight />
           </h2>
@@ -691,26 +714,24 @@ function About() {
     <>
       <section className="section page-top about-intro" id="my-story">
         <div className="about-page-hero">
-          <div>
-            <Label>ABOUT ME / JEEVAN NEUPANE</Label>
-            <h1>
-              Hi, I’m <em>Jeevan.</em>
-            </h1>
+          <div className="about-hero-copy">
+            <h1>About me</h1>
             <p className="page-intro">
-              I’m Jeevan, an AI and software engineer from Kathmandu. These
-              days, I’m building healthcare AI at A.I. Lab.
+              I’m an AI and software engineer from Kathmandu, and co-founder and
+              CTO of A.I. Lab.
             </p>
             <p>
               I studied Computer Engineering at Pulchowk Campus. My work has
-              taken me from medical imaging research at NAAMII to full-stack
-              development at Fusemachines and clinical speech recognition at
-              A.I. Lab, where I’m co-founder and CTO.
+              included medical imaging research at NAAMII, full-stack
+              development at Fusemachines and now clinical speech recognition at
+              A.I. Lab.
             </p>
             <p>
-              There’s also the part that doesn’t fit neatly into a project card:
-              helping students in an AI lab, learning networking in Indonesia,
-              and spending two months with founders and researchers in Chennai.
-              Those experiences belong here too.
+              I also attended{" "}
+              <a href="#indonesia">APIE Camp #06 in Malang, Indonesia</a>, and
+              spent eight weeks at <a href="#india">IIT Madras in Chennai</a>{" "}
+              with the IN-SPAN program. In Nepal, I was a teaching assistant at
+              Nepal AI School.
             </p>
             <div className="hero-actions">
               <a
@@ -725,16 +746,37 @@ function About() {
               </a>
             </div>
           </div>
-          <figure className="about-photo">
-            <img
-              className="about-portrait"
-              src="/images/linkedin/inspan-1.webp"
-              alt="Jeevan Neupane beside the IIT Madras emblem during IN-SPAN 2026"
-              width="900"
-              height="1200"
-            />
-            <figcaption>IIT Madras, Chennai · IN-SPAN 2026</figcaption>
-          </figure>
+          <div className="about-collage">
+            <div className="collage-stack">
+              <figure className="collage-print collage-main">
+                <img
+                  src="/images/linkedin/inspan-1.webp"
+                  alt="Jeevan Neupane beside the IIT Madras emblem during IN-SPAN 2026"
+                  width="900"
+                  height="1200"
+                />
+                <figcaption>
+                  <span>IIT Madras</span>
+                  <span>2026</span>
+                </figcaption>
+              </figure>
+              <figure className="collage-print collage-apie">
+                <img
+                  src="/images/apie-cohort.webp"
+                  alt="The APIE Camp #06 participants and organizers together at Universitas Brawijaya in Malang"
+                  width="1400"
+                  height="760"
+                />
+                <figcaption>
+                  <span>APIE Camp #06, Malang</span>
+                  <span>2025</span>
+                </figcaption>
+              </figure>
+            </div>
+            <a className="collage-credit" href={apieGlanceUrl} {...external}>
+              Cohort photo: SOI Asia <FiArrowUpRight />
+            </a>
+          </div>
         </div>
         <dl className="about-facts">
           <div>
@@ -743,7 +785,15 @@ function About() {
           </div>
           <div>
             <dt>EDUCATION</dt>
-            <dd>Computer Engineering · Pulchowk ’26</dd>
+            <dd>Computer Engineering, Pulchowk Campus, 2026</dd>
+          </div>
+          <div>
+            <dt>LEARNING ABROAD</dt>
+            <dd>
+              APIE Camp, Indonesia, 2025
+              <br />
+              IN-SPAN, India, 2026
+            </dd>
           </div>
           <div>
             <dt>CURRENT FOCUS</dt>
@@ -753,13 +803,13 @@ function About() {
         <nav className="about-jump-links" aria-label="About page sections">
           <span>ON THIS PAGE</span>
           <a href="#international">
-            Indonesia & India <FiArrowDown />
+            APIE Camp & IN-SPAN <FiArrowDown />
           </a>
           <a href="#work-and-teaching">
             Work & teaching <FiArrowDown />
           </a>
           <a href="#toolkit">
-            Tools <FiArrowDown />
+            Skills <FiArrowDown />
           </a>
           <a href="#community">
             Community & awards <FiArrowDown />
@@ -768,28 +818,16 @@ function About() {
       </section>
       <section id="international" className="section about-travels reveal">
         <div className="section-heading">
-          <div>
-            <Label>01 / LEARNING ABROAD</Label>
-            <h2>
-              Learning in Indonesia
-              <br />
-              <em>and India.</em>
-            </h2>
-          </div>
-          <p className="section-aside">
-            From the networks behind the internet to the work behind a
-            healthcare startup.
-          </p>
+          <h2>Programs abroad</h2>
         </div>
         <div className="travel-stories">
-          {internationalPrograms.map((trip, index) => (
+          {internationalPrograms.map((trip) => (
             <article
               className={`travel-story travel-${trip.id}`}
               id={trip.id}
               key={trip.id}
             >
               <div className="travel-location">
-                <span className="travel-number">0{index + 1}</span>
                 <div>
                   <h3>{trip.country}</h3>
                   <p>
@@ -798,20 +836,32 @@ function About() {
                 </div>
                 <time>{trip.dates}</time>
               </div>
-              <figure className="travel-photo">
-                <img
-                  src={trip.image}
-                  alt={trip.alt}
-                  width={trip.width}
-                  height={trip.height}
-                  loading="lazy"
-                />
-                <figcaption>
-                  <a href={trip.url} {...external}>
-                    {trip.caption} <FiArrowUpRight />
-                  </a>
-                </figcaption>
-              </figure>
+              <div className="travel-media">
+                {trip.photos.map((photo, photoIndex) => (
+                  <figure
+                    className={
+                      photoIndex === 0 ? "travel-photo" : "travel-thumb"
+                    }
+                    key={photo.image}
+                  >
+                    <img
+                      src={photo.image}
+                      alt={photo.alt}
+                      width={photo.width}
+                      height={photo.height}
+                      loading="lazy"
+                    />
+                    <figcaption>{photo.caption}</figcaption>
+                  </figure>
+                ))}
+                <a
+                  className="travel-credit"
+                  href={trip.creditUrl}
+                  {...external}
+                >
+                  {trip.credit} <FiArrowUpRight />
+                </a>
+              </div>
               <div className="travel-copy">
                 <span className="project-kicker">{trip.program}</span>
                 <h3>{trip.title}</h3>
@@ -832,24 +882,12 @@ function About() {
       </section>
       <section id="work-and-teaching" className="section reveal">
         <div className="section-heading">
-          <div>
-            <Label>02 / WORK & TEACHING</Label>
-            <h2>
-              Work & <em>teaching.</em>
-            </h2>
-          </div>
-          <p className="section-aside">
-            Research, product engineering, and hands-on teaching at Nepal AI
-            School.
-          </p>
+          <h2>Work and teaching</h2>
         </div>
         <Experience />
       </section>
       <section id="toolkit" className="section reveal">
-        <Label>03 / MY TOOLKIT</Label>
-        <h2>
-          The tools behind <em>the work.</em>
-        </h2>
+        <h2>Skills</h2>
         <div className="skills-grid">
           {skills.map((s) => (
             <article key={s.title}>
@@ -860,10 +898,7 @@ function About() {
         </div>
       </section>
       <section id="community" className="section reveal">
-        <Label>04 / BEYOND THE CODE</Label>
-        <h2>
-          Community & <em>a few milestones.</em>
-        </h2>
+        <h2>Community and awards</h2>
         <div className="achievement-list">
           {achievements
             .filter(
@@ -892,41 +927,38 @@ function About() {
         </div>
       </section>
       <section className="section reveal">
-        <Label>05 / EDUCATION & CERTIFICATIONS</Label>
-        <h2>
-          What I’ve <em>studied.</em>
-        </h2>
+        <h2>Education and certifications</h2>
         <div className="skills-grid">
           <article>
             <h3>Bachelor of Computer Engineering</h3>
             <p>
               Pulchowk Campus, Tribhuvan University
               <br />
-              April 2022 – April 2026
+              April 2022 to April 2026
             </p>
           </article>
           <article>
             <h3>Artificial Intelligence</h3>
             <p>
-              Samsung Innovation Campus · December 2025
+              Samsung Innovation Campus, December 2025
               <br />
-              Fusemachines AI Microdegree · December 2025
+              Fusemachines AI Microdegree, December 2025
             </p>
           </article>
           <article>
             <h3>Networks & open source</h3>
             <p>
-              Operating the Internet — Keio University & APIE · November 2024
+              Operating the Internet, Keio University and APIE, November 2024
               <br />
-              Introduction to Open Source — IBM · September 2024
+              Introduction to Open Source, IBM, September 2024
             </p>
           </article>
           <article>
             <h3>Cloud & networking</h3>
             <p>
-              Cisco Networking Basics · January 2025
+              Cisco Networking Basics, January 2025
               <br />
-              AWS Cloud Quest: Cloud Practitioner · December 2024
+              AWS Cloud Quest: Cloud Practitioner, December 2024
             </p>
             <a className="text-link" href={linkedinUrl} {...external}>
               LinkedIn credentials <FiArrowUpRight />
@@ -942,28 +974,21 @@ function Research() {
   return (
     <>
       <section className="section page-top">
-        <Label>RESEARCH & PUBLICATION</Label>
-        <h1>
-          Research in <em>medical AI.</em>
-        </h1>
+        <h1>Research</h1>
         <p className="page-intro">
-          My research interests connect medical imaging, computer vision, and
-          deep learning — with a focus on translating images into useful
-          representations.
+          My research is in medical imaging and computer vision with deep
+          learning.
         </p>
         <article className="publication">
-          <span className="publication-icon">↗</span>
           <div>
-            <span className="eyebrow">
-              ACCEPTED POSTER PAPER · MIRASOL 2026
-            </span>
+            <span className="eyebrow">ACCEPTED POSTER PAPER, MIRASOL 2026</span>
             <h2>
               Large-Scale Pretraining for Improving Deep Learning-Based
               Geometric Distortion Correction of Diffusion-Weighted Imaging.
             </h2>
-            <p>MICCAI Workshop · 2026</p>
+            <p>MICCAI Workshop, 2026</p>
             <p className="muted">
-              Co-author · Preprint available on arXiv, September 2026.
+              Co-author. Preprint on arXiv, September 2026.
             </p>
             <a
               className="text-link"
@@ -977,15 +1002,13 @@ function Research() {
         </article>
         <div className="section-heading">
           <div>
-            <Label>AT NAAMII / FEB 2025 – JAN 2026</Label>
-            <h2>
-              Areas I’ve <em>worked in.</em>
-            </h2>
+            <Label>AT NAAMII, FEB 2025 TO JAN 2026</Label>
+            <h2>Research areas</h2>
           </div>
         </div>
         <div className="research-topics">
           <article>
-            <span>01 / 3D RECONSTRUCTION</span>
+            <span>3D RECONSTRUCTION</span>
             <h3>X-rays to bone shapes</h3>
             <p>
               DRR generation, mesh deformation, CNNs, and transformer-based
@@ -996,7 +1019,7 @@ function Research() {
             </Link>
           </article>
           <article>
-            <span>02 / RETINAL IMAGING</span>
+            <span>RETINAL IMAGING</span>
             <h3>Retinal disease classification</h3>
             <p>
               Developed models with EfficientNet, ResNet, and ensemble methods
@@ -1005,12 +1028,11 @@ function Research() {
             </p>
           </article>
           <article>
-            <span>03 / SPEECH & LANGUAGE</span>
+            <span>SPEECH AND LANGUAGE</span>
             <h3>Understanding clinical conversations</h3>
             <p>
-              Current work at A.I Lab spans Nepali-English medical speech
-              recognition, diarization, and LLM pipelines for structured
-              clinical notes.
+              At A.I. Lab I work on Nepali-English medical speech recognition,
+              diarization and LLM pipelines for structured clinical notes.
             </p>
             <Link className="text-link" to="/projects/shruti">
               Explore Shruti <FiArrowUpRight />
@@ -1025,13 +1047,9 @@ function Research() {
 function Archive() {
   return (
     <section className="section page-top">
-      <Label>THE EARLIER CHAPTERS</Label>
-      <h1>
-        The project <em>archive.</em>
-      </h1>
+      <h1>Older projects</h1>
       <p className="page-intro">
-        A collection of web applications, AI prototypes, and college projects
-        from my earlier portfolio.
+        Web apps, AI prototypes and college projects from my earlier portfolio.
       </p>
       <div className="achievement-list">
         {AllProjects.map((p) => (
@@ -1054,7 +1072,7 @@ function Archive() {
         ))}
       </div>
       <Link className="text-link" to="/projects">
-        Back to selected projects <FiArrowUpRight />
+        Back to projects <FiArrowUpRight />
       </Link>
     </section>
   );
@@ -1069,13 +1087,10 @@ function LegacyProject() {
     <>
       <section className="section page-top detail">
         <Link className="text-link back" to="/archive">
-          ← Back to project archive
+          <FiArrowLeft /> Older projects
         </Link>
-        <Label>FROM THE PROJECT ARCHIVE</Label>
-        <h1>
-          {p.projectTitle}
-          <span className="accent">.</span>
-        </h1>
+        <Label>OLDER PROJECT</Label>
+        <h1>{p.projectTitle}</h1>
         <p className="page-intro">{p.projectTagline}</p>
         <div className="tags">
           {p.technologies.map((t) => (
@@ -1120,13 +1135,114 @@ function LegacyProject() {
     </>
   );
 }
+function Writing() {
+  return (
+    <>
+      <section className="section page-top">
+        <h1>Writing</h1>
+        <p className="page-intro">
+          Articles I’ve written on Medium about deep learning and databases. You
+          can read them here or on Medium.
+        </p>
+        <a className="text-link" href={mediumUrl} {...external}>
+          Follow me on Medium <FiArrowUpRight />
+        </a>
+        <PostList />
+      </section>
+      <Contact />
+    </>
+  );
+}
+function Article() {
+  const { slug } = useParams();
+  const { status, posts, retry } = useMediumPosts();
+  const index = posts.findIndex((p) => p.slug === slug);
+  const post = posts[index];
+  const next = posts.length > 1 ? posts[(index + 1) % posts.length] : null;
+  useEffect(() => {
+    if (post) document.title = `${post.title} | Jeevan Neupane`;
+  }, [post]);
+  if (status === "ready" && !post) return <NotFound />;
+  return (
+    <>
+      <article className="section page-top article">
+        <div className="article-shell">
+          <Link className="text-link back" to="/writing">
+            <FiArrowLeft /> All articles
+          </Link>
+          {post ? (
+            <>
+              <Label>
+                {post.date.toUpperCase()}, {post.minutes} MIN READ
+              </Label>
+              <h1>{post.title}</h1>
+              <div className="tags">
+                {post.categories.map((c) => (
+                  <span key={c}>{c.replace(/-/g, " ")}</span>
+                ))}
+              </div>
+              <ArticleBody post={post} />
+              <div className="article-end">
+                <p>This article was first published on Medium.</p>
+                <div className="hero-actions">
+                  <a className="button primary" href={post.url} {...external}>
+                    Read on Medium <FiArrowUpRight />
+                  </a>
+                  <Link className="button secondary" to="/writing">
+                    More articles <FiArrowRight />
+                  </Link>
+                </div>
+              </div>
+            </>
+          ) : status === "error" ? (
+            <>
+              <h1>This article didn’t load</h1>
+              <p className="page-intro">
+                Medium didn’t respond just now. Try again, or read it on Medium
+                directly.
+              </p>
+              <div className="hero-actions">
+                <button className="button primary" onClick={retry}>
+                  Try again
+                </button>
+                <a className="button secondary" href={mediumUrl} {...external}>
+                  Open Medium <FiArrowUpRight />
+                </a>
+              </div>
+            </>
+          ) : (
+            <>
+              <h1 className="article-loading">Loading article…</h1>
+              <div className="article-skeleton" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+                <i />
+              </div>
+            </>
+          )}
+        </div>
+        {post && next && (
+          <Link
+            className="next-project article-next"
+            to={`/writing/${next.slug}`}
+          >
+            <span>NEXT ARTICLE</span>
+            <h2>
+              {next.title} <FiArrowUpRight />
+            </h2>
+          </Link>
+        )}
+      </article>
+      <Contact />
+    </>
+  );
+}
 function NotFound() {
   return (
     <section className="section page-top not-found">
-      <Label>404 / A SMALL DETOUR</Label>
-      <h1>
-        Page <em>not found.</em>
-      </h1>
+      <Label>404</Label>
+      <h1>Page not found</h1>
       <Link className="button primary" to="/">
         Back to home <FiArrowRight />
       </Link>
@@ -1165,6 +1281,8 @@ export function PortfolioContent() {
           />
           <Route path="/about" element={<About />} />
           <Route path="/research" element={<Research />} />
+          <Route path="/writing" element={<Writing />} />
+          <Route path="/writing/:slug" element={<Article />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

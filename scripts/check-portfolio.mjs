@@ -37,6 +37,7 @@ const routes = [
   "/projects",
   "/about",
   "/research",
+  "/writing",
   "/archive",
   ...projects.map((p) => `/projects/${p.slug}`),
   ...AllProjects.filter((p) => p.projectTitle !== "VITON").map(
@@ -61,10 +62,7 @@ for (const route of routes) {
     1,
     `${route}: exactly one primary heading`,
   );
-  assert(
-    !html.includes("404 / A SMALL DETOUR"),
-    `${route}: real page resolves`,
-  );
+  assert(!html.includes("Page not found"), `${route}: real page resolves`);
   assert(html.includes('id="main"'), `${route}: skip-link target exists`);
   assert(
     !/href="(?:undefined|null|#)"/.test(html),
@@ -98,10 +96,7 @@ for (const path of [
       React.createElement(PortfolioContent),
     ),
   );
-  assert(
-    html.includes("404 / A SMALL DETOUR"),
-    `${path}: safe not-found state`,
-  );
+  assert(html.includes("Page not found"), `${path}: safe not-found state`);
 }
 const cv = await readFile("public/Jeevan-Neupane-CV.pdf");
 assert.equal(cv.subarray(0, 5).toString(), "%PDF-", "CV is a valid PDF file");
@@ -117,7 +112,9 @@ try {
 }
 for (const project of projects) {
   assert(
-    project.alt && project.contributions.length && project.overview,
+    (!project.image || project.alt) &&
+      project.contributions.length &&
+      project.overview,
     `${project.slug}: complete detail content`,
   );
   if (project.url) assert.equal(new URL(project.url).protocol, "https:");

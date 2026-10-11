@@ -13,6 +13,12 @@ Jeevan's CV, existing `src/data/journey_events.ts`, and his explicit request est
 
 The Indonesia image is an official camp photograph, not a personal photo from Jeevan's LinkedIn. Its visible caption credits SOI Asia, links to the report, and does not identify Jeevan as appearing in the photograph. The existing selection-email image is not republished.
 
+Added October 11, 2026, from the official recap (https://apie.sites.soi.asia/2025/02/19/apie-camp-06-in-ub-indonesia-in-a-glance/), credited to SOI Asia on the page. Captions follow the recap's own day labels and do not identify individuals.
+
+- `public/images/apie-cohort.webp` (1400 × 760): cohort group photo (`2025/02/1L5A8110-scaled.jpg`), cropped to the group. Used in the About hero collage.
+- `public/images/apie-dns.webp` (1000 × 750): Day 3 DNS hands-on with APNIC Academy (`2025/02/day3_dns2.jpg`).
+- `public/images/apie-site-visit.webp` (1000 × 562): Day 5 visit to the neuCentrIX data center (`2025/02/day5_Site-visit.jpg`).
+
 ## Profile
 
 - Current profile: https://www.linkedin.com/in/jeevanneupane1/
