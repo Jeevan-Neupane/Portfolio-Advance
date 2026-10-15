@@ -17,7 +17,7 @@ node scripts/check-portfolio.mjs
 npm run build
 ```
 
-`dist/` is the production output. `public/_redirects` provides SPA route fallback for Netlify; other static hosts must rewrite unknown routes to `/index.html`.
+`dist/` is the production output. `vercel.json` (Vercel, where the site is hosted) and `public/_redirects` (Netlify) rewrite unknown routes to `/index.html` so deep links work; other static hosts need the same rewrite.
 
 ## Content and routes
 
