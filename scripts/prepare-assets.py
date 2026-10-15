@@ -39,6 +39,16 @@ canvas.paste(lat, (44, 310), lat)
 canvas.paste(shape, (335, (600 - shape.height) // 2), shape)
 canvas.save(out / 'xray-results.webp', 'WEBP', quality=88)
 
+# Human action recognition: the UCF-101 class grid embedded in the repository's
+# proposal slides (slide 5), cropped to its first eight rows.
+import io
+import pymupdf
+with urllib.request.urlopen('https://raw.githubusercontent.com/Jeevan-Neupane/Human-action-recognition/main/proposal%20presentation%20slides.pdf') as response:
+    slides = pymupdf.open(stream=response.read())
+xref = slides[4].get_images(full=True)[0][0]
+grid = Image.open(io.BytesIO(slides.extract_image(xref)['image'])).convert('RGB')
+grid.crop((0, 0, 640, 428)).save(out / 'har-ucf101.webp', 'WEBP', quality=90)
+
 # locus-register.webp is a 1440x900 browser screenshot of
 # https://register.locus.com.np/register, cropped to (270, 60, 1170, 660).
 print('Prepared portrait, project images, and updated CV.')

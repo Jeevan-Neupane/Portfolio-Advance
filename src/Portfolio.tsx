@@ -24,6 +24,7 @@ import {
 } from "react-icons/fi";
 import {
   FaGithub,
+  FaGoogleScholar,
   FaKaggle,
   FaLinkedinIn,
   FaMedium,
@@ -44,6 +45,7 @@ import {
   internationalPrograms,
   apieGlanceUrl,
   mediumUrl,
+  scholarUrl,
   socialLinks,
 } from "./portfolio-data";
 import { AllProjects } from "./data/AllProjects";
@@ -55,6 +57,7 @@ const external = { target: "_blank", rel: "noopener noreferrer" };
 const socialIcons: Record<string, IconType> = {
   github: FaGithub,
   linkedin: FaLinkedinIn,
+  scholar: FaGoogleScholar,
   medium: FaMedium,
   kaggle: FaKaggle,
   x: FaXTwitter,
@@ -544,6 +547,19 @@ function Home() {
       <section id="about" className="section about-section reveal">
         <div>
           <h2>About</h2>
+          <figure className="about-photo">
+            <img
+              src="/images/linkedin/inspan-4.webp"
+              alt="Jeevan standing on a walkway outside a modern campus building in Chennai"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+            <figcaption>
+              <span>Chennai, during IN-SPAN</span>
+              <span>2026</span>
+            </figcaption>
+          </figure>
         </div>
         <div className="about-copy">
           <p className="large-copy">
@@ -979,6 +995,9 @@ function Research() {
           My research is in medical imaging and computer vision with deep
           learning.
         </p>
+        <a className="text-link" href={scholarUrl} {...external}>
+          Google Scholar profile <FiArrowUpRight />
+        </a>
         <article className="publication">
           <div>
             <span className="eyebrow">ACCEPTED POSTER PAPER, MIRASOL 2026</span>

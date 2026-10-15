@@ -1,8 +1,11 @@
 export const linkedinUrl = "https://www.linkedin.com/in/jeevanneupane1/";
 export const mediumUrl = "https://medium.com/@jeevan.neupane003";
+export const scholarUrl =
+  "https://scholar.google.com/citations?user=RAVixmIAAAAJ&hl=en";
 export const socialLinks = [
   { id: "github", label: "GitHub", url: "https://github.com/Jeevan-Neupane" },
   { id: "linkedin", label: "LinkedIn", url: linkedinUrl },
+  { id: "scholar", label: "Google Scholar", url: scholarUrl },
   { id: "medium", label: "Medium", url: mediumUrl },
   {
     id: "kaggle",
@@ -236,6 +239,10 @@ export const projects = [
     title: "Human action recognition",
     category: "Computer vision",
     year: "College project",
+    image: "/images/har-ucf101.webp",
+    alt: "A grid of labelled video frames from the UCF-101 action dataset, such as Apply Eye Makeup, Hula Hoop, Push Ups and Playing Guitar",
+    caption:
+      "Action classes from UCF-101, one of the datasets we fine-tuned on, from our proposal slides.",
     summary:
       "Fine-tuned video transformers on UCF-101 and NTU RGB+D 120, plus a custom 10-action dataset.",
     tags: ["Video transformers", "UCF-101", "NTU RGB+D 120"],
