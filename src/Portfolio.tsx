@@ -453,23 +453,19 @@ function Home() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <div className="status-badge">
-            <span className="status-dot" aria-hidden="true" />
-            <span>Building Shruti at A.I. Lab &middot; Kathmandu</span>
-          </div>
           <Label>AI/ML &amp; SOFTWARE ENGINEER</Label>
-          <h1>
-            Hi, I’m <span className="gradient-text">Jeevan</span>.
-          </h1>
-          <p className="hero-lead">Engineering voice-first AI &amp; deep learning systems for healthcare.</p>
+          <h1>Hi, I’m Jeevan.</h1>
+          <p className="hero-lead">I build voice-first AI systems for healthcare.</p>
           <p className="hero-intro">
-            Co-founder and CTO of A.I. Lab in Kathmandu. Leading the engineering of
-            Shruti to turn Nepali&ndash;English clinical conversations into structured medical notes
-            with domain speech recognition and LLM pipelines.
+            Co-founder and CTO at A.I. Lab in Kathmandu. Leading the engineering of
+            Shruti &mdash; an AI clinical documentation assistant designed for bilingual
+            Nepali&ndash;English doctor-patient consultations. Computer Engineering graduate
+            from Pulchowk Campus with experience in medical 3D imaging research at NAAMII
+            and full-stack engineering at Fusemachines.
           </p>
           <div className="hero-actions">
             <Link className="button primary" to="/#work">
-              Explore Projects <FiArrowDown />
+              View Work <FiArrowDown />
             </Link>
             <a
               className="button secondary"
@@ -478,23 +474,6 @@ function Home() {
             >
               Download CV <FiDownload />
             </a>
-          </div>
-          <div className="hero-metrics">
-            <div className="metric-card">
-              <span className="metric-label">CURRENT ROLE</span>
-              <span className="metric-value">Co-founder &amp; CTO</span>
-              <span className="metric-sub">A.I. Lab Pvt. Ltd.</span>
-            </div>
-            <div className="metric-card">
-              <span className="metric-label">EDUCATION</span>
-              <span className="metric-value">Computer Eng.</span>
-              <span className="metric-sub">Pulchowk Campus</span>
-            </div>
-            <div className="metric-card">
-              <span className="metric-label">RESEARCH</span>
-              <span className="metric-value">MIRASOL 2026</span>
-              <span className="metric-sub">MICCAI Workshop</span>
-            </div>
           </div>
           <SocialLinks className="hero-social" />
         </div>
@@ -522,7 +501,7 @@ function Home() {
               Shruti at A.I. Lab <FiArrowUpRight />
             </Link>
           </span>
-          <span>Computer Engineering, Pulchowk Campus, 2026</span>
+          <span>Computer Engineering &middot; Pulchowk Campus</span>
         </div>
       </section>
       <section id="work" className="section work-section reveal">
@@ -542,22 +521,22 @@ function Home() {
               loading="lazy"
             />
             <figcaption>
-              Shruti’s note screen, from A.I. Lab’s demo video.
+              Shruti’s note screen &mdash; A.I. Lab clinical demo.
             </figcaption>
           </figure>
           <div className="featured-copy">
-            <span className="project-kicker">FEATURED CASE STUDY &middot; ACTIVE PILOT</span>
+            <span className="project-kicker">FEATURED WORK &middot; ACTIVE PILOT</span>
             <h3>Shruti</h3>
             <p className="featured-description">
               Turns doctor-patient conversations into structured clinical notes in Nepali and English.
             </p>
             <p>
-              I work on medical speech recognition, speaker diarization, the note generation
-              pipeline, backend APIs, and pilot deployments with healthcare partners.
+              I lead development across medical speech recognition, speaker diarization,
+              the note generation pipeline, backend APIs, and pilot deployments with healthcare partners.
             </p>
             <div className="tags">
               <span>Medical ASR</span>
-              <span>LLM pipelines</span>
+              <span>LLM Pipelines</span>
               <span>FastAPI &amp; PyTorch</span>
               <span>EMR Integration</span>
             </div>
