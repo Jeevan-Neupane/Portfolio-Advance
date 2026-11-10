@@ -2,12 +2,21 @@ import { FaBriefcase } from "react-icons/fa";
 
 const MyExperiences = [
   {
-    title: "Fullstack Intern (Hybrid)",
-    place: "Fusemachine",
+    title: "Co-founder & Chief Technology Officer",
+    place: "A.I Lab",
     description:
-      "Building the Fuse AI Fellowship LMS across frontend, backend, database, API development, and testing.",
-    from: "2026-02-01",
+      "Building Shruti, a voice-first clinical documentation tool for doctor-patient conversations across medical speech recognition, LLM pipelines, backend APIs, and model deployment.",
+    from: "2025-01-01",
     to: "Present",
+    icon: FaBriefcase,
+  },
+  {
+    title: "Fullstack Intern (Hybrid)",
+    place: "Fusemachines",
+    description:
+      "Developed the Fuse AI Fellowship LMS across frontend, backend, database, API development, and testing.",
+    from: "2026-02-01",
+    to: "2026-04-30",
     icon: FaBriefcase,
   },
   {
