@@ -453,17 +453,23 @@ function Home() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <Label>AI/ML AND SOFTWARE ENGINEER</Label>
-          <h1>Hi, I’m Jeevan.</h1>
-          <p className="hero-lead">I build AI for healthcare.</p>
+          <div className="status-badge">
+            <span className="status-dot" aria-hidden="true" />
+            <span>Building Shruti at A.I. Lab &middot; Kathmandu</span>
+          </div>
+          <Label>AI/ML &amp; SOFTWARE ENGINEER</Label>
+          <h1>
+            Hi, I’m <span className="gradient-text">Jeevan</span>.
+          </h1>
+          <p className="hero-lead">Engineering voice-first AI &amp; deep learning systems for healthcare.</p>
           <p className="hero-intro">
-            I’m co-founder and CTO of A.I. Lab in Kathmandu. We’re building
-            Shruti, which turns Nepali-English conversations between doctors and
-            patients into medical notes.
+            Co-founder and CTO of A.I. Lab in Kathmandu. Leading the engineering of
+            Shruti to turn Nepali&ndash;English clinical conversations into structured medical notes
+            with domain speech recognition and LLM pipelines.
           </p>
           <div className="hero-actions">
             <Link className="button primary" to="/#work">
-              See my work <FiArrowDown />
+              Explore Projects <FiArrowDown />
             </Link>
             <a
               className="button secondary"
@@ -472,6 +478,23 @@ function Home() {
             >
               Download CV <FiDownload />
             </a>
+          </div>
+          <div className="hero-metrics">
+            <div className="metric-card">
+              <span className="metric-label">CURRENT ROLE</span>
+              <span className="metric-value">Co-founder &amp; CTO</span>
+              <span className="metric-sub">A.I. Lab Pvt. Ltd.</span>
+            </div>
+            <div className="metric-card">
+              <span className="metric-label">EDUCATION</span>
+              <span className="metric-value">Computer Eng.</span>
+              <span className="metric-sub">Pulchowk Campus</span>
+            </div>
+            <div className="metric-card">
+              <span className="metric-label">RESEARCH</span>
+              <span className="metric-value">MIRASOL 2026</span>
+              <span className="metric-sub">MICCAI Workshop</span>
+            </div>
           </div>
           <SocialLinks className="hero-social" />
         </div>
@@ -486,7 +509,7 @@ function Home() {
             />
           </div>
           <figcaption>
-            <span>IIT Madras, 2026</span>
+            <span>IIT Madras &middot; 2026</span>
             <span>
               <FiMapPin /> Kathmandu, Nepal
             </span>
@@ -523,23 +546,23 @@ function Home() {
             </figcaption>
           </figure>
           <div className="featured-copy">
-            <span className="project-kicker">CURRENT WORK</span>
+            <span className="project-kicker">FEATURED CASE STUDY &middot; ACTIVE PILOT</span>
             <h3>Shruti</h3>
             <p className="featured-description">
-              Turns doctor-patient conversations into structured clinical notes.
+              Turns doctor-patient conversations into structured clinical notes in Nepali and English.
             </p>
             <p>
-              I work on the speech recognition models, the note generation
-              pipeline and the backend, and help with deployment and pilot
-              testing with healthcare partners.
+              I work on medical speech recognition, speaker diarization, the note generation
+              pipeline, backend APIs, and pilot deployments with healthcare partners.
             </p>
             <div className="tags">
               <span>Medical ASR</span>
               <span>LLM pipelines</span>
-              <span>Backend APIs</span>
+              <span>FastAPI &amp; PyTorch</span>
+              <span>EMR Integration</span>
             </div>
             <span className="feature-link">
-              Read more <FiArrowUpRight />
+              Read case study <FiArrowUpRight />
             </span>
             <span className="project-status">
               In pilot testing, 2025 to present
