@@ -653,6 +653,21 @@ footer,
   max-width: 630px;
   margin-bottom: 0;
 }
+.experience-bullets {
+  margin: 0;
+  padding-left: 18px;
+  max-width: 630px;
+  list-style-type: disc;
+}
+.experience-bullets li {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--body);
+  margin-bottom: 6px;
+}
+.experience-bullets li:last-child {
+  margin-bottom: 0;
+}
 .experience-item time {
   text-align: right;
   color: var(--muted);
@@ -2096,7 +2111,8 @@ main:focus {
     text-align: left;
     padding: 0;
   }
-  .experience-item p {
+  .experience-item p,
+  .experience-bullets li {
     font-size: 13px;
   }
   .research-banner {

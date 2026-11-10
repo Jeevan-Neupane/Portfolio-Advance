@@ -199,13 +199,21 @@ function Experience() {
   return (
     <div className="experience-list">
       {experience.map((item) => (
-        <article className="experience-item" key={item.company}>
+        <article className="experience-item" key={`${item.company}-${item.role}`}>
           <div>
             <h3>{item.role}</h3>
             <p className="company">
               {item.company} <span> / {item.type}</span>
             </p>
-            <p>{item.description}</p>
+            {"bullets" in item && Array.isArray(item.bullets) && item.bullets.length > 0 ? (
+              <ul className="experience-bullets">
+                {item.bullets.map((bullet, idx) => (
+                  <li key={idx}>{bullet}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>{item.description}</p>
+            )}
           </div>
           <time>{item.dates}</time>
         </article>

@@ -2,46 +2,46 @@ import { FaBriefcase } from "react-icons/fa";
 
 const MyExperiences = [
   {
-    title: "Co-founder & Chief Technology Officer",
-    place: "A.I Lab",
+    title: "Co-founder and Chief Technology Officer",
+    place: "A.I. Lab Pvt. Ltd. | Kathmandu, Nepal",
     description:
-      "Building Shruti, a voice-first clinical documentation tool for doctor-patient conversations across medical speech recognition, LLM pipelines, backend APIs, and model deployment.",
-    from: "2025-01-01",
+      "Lead development of Shruti, a clinical documentation product that transforms Nepali–English conversations into structured medical notes. Build backend services and API-driven workflows linking speech recognition, speaker diarization, LLM processing, clinician review, and electronic medical records. Work on integration, deployment, troubleshooting, and pilot feedback with hospitals, doctors, and EMR technology partners.",
+    from: "2026-04-01",
     to: "Present",
     icon: FaBriefcase,
   },
   {
-    title: "Fullstack Intern (Hybrid)",
+    title: "Full-stack Development Intern (Hybrid)",
     place: "Fusemachines",
     description:
-      "Developed the Fuse AI Fellowship LMS across frontend, backend, database, API development, and testing.",
+      "Developed features for the Fuse AI Fellowship learning management system across frontend, backend, database, and API layers. Implemented and tested application workflows, debugged integration issues, and supported end-to-end feature delivery.",
     from: "2026-02-01",
     to: "2026-04-30",
     icon: FaBriefcase,
   },
   {
-    title: "Research Intern (Part Time)",
-    place: "NAAMII",
+    title: "Teaching Assistant – 6th Annual Nepal AI School",
+    place: "NAAMII | Kathmandu, Nepal",
     description:
-      "Researched medical imaging using DRR generation, mesh deformation, and transformer-based 3D reconstruction.",
-    from: "2025-02-01",
-    to: "2026-01-31",
-    icon: FaBriefcase,
-  },
-  {
-    title: "Teaching Assistant",
-    place: "Sixth Annual Nepal AI School (NAAMII)",
-    description:
-      "Supported LLM and Medical AI labs with hands-on implementation guidance and debugging help.",
+      "Supported hands-on Large Language Model (LLM) and Medical AI lab sessions, assisting participants with implementation and debugging.",
     from: "2025-12-01",
     to: "2026-01-31",
     icon: FaBriefcase,
   },
   {
-    title: "Software Engineering Intern (Part Time)",
-    place: "Institute of Engineering (IOE)",
+    title: "Research Intern (Part-time)",
+    place: "NAAMII | Lalitpur, Nepal",
     description:
-      "Contributed to frontend development and technical documentation for an examination and result management system.",
+      "Implemented and evaluated Python/PyTorch workflows for X-ray-to-3D reconstruction using DRR preprocessing, CNNs, transformers, and mesh deformation. Built retinal-image classification experiments with EfficientNet, ResNet, and ensemble techniques.",
+    from: "2025-02-01",
+    to: "2026-01-31",
+    icon: FaBriefcase,
+  },
+  {
+    title: "Software Engineering Intern (Part-time)",
+    place: "Institute of Engineering (IOE), Tribhuvan University",
+    description:
+      "Contributed to the frontend of an examination and results management application; prepared documentation for system roles and workflows.",
     from: "2024-12-01",
     to: "2025-12-31",
     icon: FaBriefcase,

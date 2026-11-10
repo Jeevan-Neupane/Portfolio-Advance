@@ -282,44 +282,63 @@ export const projects = [
 ];
 export const experience = [
   {
-    role: "Co-founder & Chief Technology Officer",
-    company: "A.I Lab",
+    role: "Co-founder and Chief Technology Officer",
+    company: "A.I. Lab Pvt. Ltd.",
     type: "Kathmandu, Nepal",
-    dates: "2025 to present",
+    dates: "Apr 2026 – Present",
+    bullets: [
+      "Lead development of Shruti, a clinical documentation product that transforms Nepali–English conversations into structured medical notes.",
+      "Build backend services and API-driven workflows linking speech recognition, speaker diarization, LLM processing, clinician review, and electronic medical records.",
+      "Work on integration, deployment, troubleshooting, and pilot feedback with hospitals, doctors, and EMR technology partners.",
+    ],
     description:
-      "Building Shruti, a clinical documentation tool. I work on medical speech recognition, LLM pipelines, backend APIs, model deployment and pilot testing with healthcare partners.",
+      "Lead development of Shruti, a clinical documentation product transforming Nepali–English conversations into structured medical notes, building backend services, speech recognition, and EMR integration.",
   },
   {
-    role: "Fullstack Intern",
+    role: "Full-stack Development Intern",
     company: "Fusemachines",
     type: "Hybrid",
-    dates: "Feb to Apr 2026",
+    dates: "Feb 2026 – Apr 2026",
+    bullets: [
+      "Developed features for the Fuse AI Fellowship learning management system across frontend, backend, database, and API layers.",
+      "Implemented and tested application workflows, debugged integration issues, and supported end-to-end feature delivery.",
+    ],
     description:
-      "Developed the Fuse AI Fellowship Learning Management System across frontend, backend, and database components, including API development, testing, and integration.",
+      "Developed features for the Fuse AI Fellowship learning management system across frontend, backend, database, and API layers; implemented and tested application workflows.",
   },
   {
-    role: "Teaching Assistant (TA)",
-    company: "6th Annual Nepal AI School (ANAIS)",
-    type: "Organized by NAAMII",
-    dates: "Dec 29, 2025 to Jan 8, 2026",
-    description:
-      "Supported participants during hands-on lab sessions while completing the AI school program, which covered machine learning, deep learning, transformers, computer vision, and responsible AI.",
-  },
-  {
-    role: "Research Intern",
+    role: "Teaching Assistant – 6th Annual Nepal AI School",
     company: "NAAMII",
-    type: "Part time",
-    dates: "Feb 2025 to Jan 2026",
+    type: "Kathmandu, Nepal",
+    dates: "Dec 2025 – Jan 2026",
+    bullets: [
+      "Supported hands-on Large Language Model (LLM) and Medical AI lab sessions, assisting participants with implementation and debugging.",
+    ],
     description:
-      "Worked on X-ray to 3D bone reconstruction and retinal disease classification with CNNs, transformers, and ensemble methods.",
+      "Supported hands-on Large Language Model (LLM) and Medical AI lab sessions, assisting participants with implementation and debugging.",
   },
   {
-    role: "Software Engineering Intern",
-    company: "Institute of Engineering",
-    type: "Part time",
-    dates: "Dec 2024 to Dec 2025",
+    role: "Research Intern (Part-time)",
+    company: "NAAMII",
+    type: "Lalitpur, Nepal",
+    dates: "Feb 2025 – Jan 2026",
+    bullets: [
+      "Implemented and evaluated Python/PyTorch workflows for X-ray-to-3D reconstruction using DRR preprocessing, CNNs, transformers, and mesh deformation.",
+      "Built retinal-image classification experiments with EfficientNet, ResNet, and ensemble techniques.",
+    ],
     description:
-      "Contributed to the frontend of an examination and result management system and documented system roles and workflows.",
+      "Implemented and evaluated Python/PyTorch workflows for X-ray-to-3D reconstruction and built retinal-image classification experiments with EfficientNet, ResNet, and ensemble techniques.",
+  },
+  {
+    role: "Software Engineering Intern (Part-time)",
+    company: "Institute of Engineering (IOE), Tribhuvan University",
+    type: "Lalitpur, Nepal",
+    dates: "Dec 2024 – Dec 2025",
+    bullets: [
+      "Contributed to the frontend of an examination and results management application; prepared documentation for system roles and workflows.",
+    ],
+    description:
+      "Contributed to the frontend of an examination and results management application; prepared documentation for system roles and workflows.",
   },
 ];
 export const skills = [
