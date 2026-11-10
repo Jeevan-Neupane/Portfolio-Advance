@@ -458,8 +458,8 @@ function Home() {
           <p className="hero-lead">I build voice-first AI systems for healthcare.</p>
           <p className="hero-intro">
             Co-founder and CTO at A.I. Lab in Kathmandu. Leading the engineering of
-            Shruti &mdash; an AI clinical documentation assistant designed for bilingual
-            Nepali&ndash;English doctor-patient consultations. Computer Engineering graduate
+            Shruti, an AI clinical documentation assistant designed for bilingual
+            Nepali-English doctor-patient consultations. Computer Engineering graduate
             from Pulchowk Campus with experience in medical 3D imaging research at NAAMII
             and full-stack engineering at Fusemachines.
           </p>
@@ -521,7 +521,7 @@ function Home() {
               loading="lazy"
             />
             <figcaption>
-              Shruti’s note screen &mdash; A.I. Lab clinical demo.
+              Shruti's note screen, A.I. Lab clinical demo.
             </figcaption>
           </figure>
           <div className="featured-copy">
