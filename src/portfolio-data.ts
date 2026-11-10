@@ -285,20 +285,20 @@ export const experience = [
     role: "Co-founder and Chief Technology Officer",
     company: "A.I. Lab Pvt. Ltd.",
     type: "Kathmandu, Nepal",
-    dates: "Apr 2026 – Present",
+    dates: "Apr 2026 - Present",
     bullets: [
-      "Lead development of Shruti, a clinical documentation product that transforms Nepali–English conversations into structured medical notes.",
+      "Lead development of Shruti, a clinical documentation product that transforms Nepali-English conversations into structured medical notes.",
       "Build backend services and API-driven workflows linking speech recognition, speaker diarization, LLM processing, clinician review, and electronic medical records.",
       "Work on integration, deployment, troubleshooting, and pilot feedback with hospitals, doctors, and EMR technology partners.",
     ],
     description:
-      "Lead development of Shruti, a clinical documentation product transforming Nepali–English conversations into structured medical notes, building backend services, speech recognition, and EMR integration.",
+      "Lead development of Shruti, a clinical documentation product transforming Nepali-English conversations into structured medical notes, building backend services, speech recognition, and EMR integration.",
   },
   {
     role: "Full-stack Development Intern",
     company: "Fusemachines",
     type: "Hybrid",
-    dates: "Feb 2026 – Apr 2026",
+    dates: "Feb 2026 - Apr 2026",
     bullets: [
       "Developed features for the Fuse AI Fellowship learning management system across frontend, backend, database, and API layers.",
       "Implemented and tested application workflows, debugged integration issues, and supported end-to-end feature delivery.",
@@ -307,10 +307,10 @@ export const experience = [
       "Developed features for the Fuse AI Fellowship learning management system across frontend, backend, database, and API layers; implemented and tested application workflows.",
   },
   {
-    role: "Teaching Assistant – 6th Annual Nepal AI School",
+    role: "Teaching Assistant, 6th Annual Nepal AI School",
     company: "NAAMII",
     type: "Kathmandu, Nepal",
-    dates: "Dec 2025 – Jan 2026",
+    dates: "Dec 2025 - Jan 2026",
     bullets: [
       "Supported hands-on Large Language Model (LLM) and Medical AI lab sessions, assisting participants with implementation and debugging.",
     ],
@@ -321,7 +321,7 @@ export const experience = [
     role: "Research Intern (Part-time)",
     company: "NAAMII",
     type: "Lalitpur, Nepal",
-    dates: "Feb 2025 – Jan 2026",
+    dates: "Feb 2025 - Jan 2026",
     bullets: [
       "Implemented and evaluated Python/PyTorch workflows for X-ray-to-3D reconstruction using DRR preprocessing, CNNs, transformers, and mesh deformation.",
       "Built retinal-image classification experiments with EfficientNet, ResNet, and ensemble techniques.",
@@ -333,7 +333,7 @@ export const experience = [
     role: "Software Engineering Intern (Part-time)",
     company: "Institute of Engineering (IOE), Tribhuvan University",
     type: "Lalitpur, Nepal",
-    dates: "Dec 2024 – Dec 2025",
+    dates: "Dec 2024 - Dec 2025",
     bullets: [
       "Contributed to the frontend of an examination and results management application; prepared documentation for system roles and workflows.",
     ],

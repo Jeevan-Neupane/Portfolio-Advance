@@ -5,7 +5,7 @@ const MyExperiences = [
     title: "Co-founder and Chief Technology Officer",
     place: "A.I. Lab Pvt. Ltd. | Kathmandu, Nepal",
     description:
-      "Lead development of Shruti, a clinical documentation product that transforms Nepali–English conversations into structured medical notes. Build backend services and API-driven workflows linking speech recognition, speaker diarization, LLM processing, clinician review, and electronic medical records. Work on integration, deployment, troubleshooting, and pilot feedback with hospitals, doctors, and EMR technology partners.",
+      "Lead development of Shruti, a clinical documentation product that transforms Nepali-English conversations into structured medical notes. Build backend services and API-driven workflows linking speech recognition, speaker diarization, LLM processing, clinician review, and electronic medical records. Work on integration, deployment, troubleshooting, and pilot feedback with hospitals, doctors, and EMR technology partners.",
     from: "2026-04-01",
     to: "Present",
     icon: FaBriefcase,
@@ -20,7 +20,7 @@ const MyExperiences = [
     icon: FaBriefcase,
   },
   {
-    title: "Teaching Assistant – 6th Annual Nepal AI School",
+    title: "Teaching Assistant, 6th Annual Nepal AI School",
     place: "NAAMII | Kathmandu, Nepal",
     description:
       "Supported hands-on Large Language Model (LLM) and Medical AI lab sessions, assisting participants with implementation and debugging.",
