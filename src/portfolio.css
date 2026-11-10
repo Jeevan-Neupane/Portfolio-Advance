@@ -276,10 +276,10 @@ footer,
 
 .hero {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  column-gap: 48px;
+  grid-template-columns: 1fr auto;
+  column-gap: 56px;
   align-items: center;
-  padding: 64px 0 0;
+  padding: 56px 0 0;
 }
 
 .eyebrow {
@@ -396,22 +396,24 @@ footer,
 }
 
 .hero-portrait {
+  width: 170px;
   margin: 0;
   position: relative;
 }
 
 .portrait-frame {
+  width: 170px;
+  height: 190px;
   position: relative;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   background: var(--surface-card);
 }
 
 .portrait-frame img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1.05;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -496,14 +498,15 @@ footer,
 
 .featured-project {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 32px;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
   background: var(--surface-card);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   overflow: hidden;
   transition: border-color 0.2s ease, background 0.2s ease;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
+  align-items: center;
 }
 
 .featured-project:hover {
@@ -513,17 +516,21 @@ footer,
 
 .featured-image {
   margin: 0;
-  padding: 24px;
+  padding: 16px;
   background: #000000;
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .featured-image img {
   width: 100%;
-  border-radius: 8px;
+  max-width: 248px;
+  max-height: 165px;
+  object-fit: cover;
+  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -651,7 +658,7 @@ footer,
 
 .project-image {
   position: relative;
-  aspect-ratio: 1.5;
+  height: 130px;
   overflow: hidden;
   background: #000000;
   border-bottom: 1px solid var(--line);
@@ -661,6 +668,7 @@ footer,
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transition: transform 0.3s ease;
 }
 
@@ -766,8 +774,9 @@ footer,
 }
 
 .about-photo {
-  margin: 0;
-  border-radius: 12px;
+  margin: 0 auto;
+  max-width: 240px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--surface-card);
@@ -775,8 +784,7 @@ footer,
 
 .about-photo img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
+  height: 160px;
   object-fit: cover;
 }
 
@@ -996,8 +1004,8 @@ footer,
 }
 
 .post-thumb {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+  width: 88px;
+  height: 62px;
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--line);
@@ -1280,15 +1288,16 @@ footer a:hover {
 }
 
 .detail-image {
-  margin: 32px 0 40px;
+  max-width: 480px;
+  margin: 24px auto 32px;
 }
 
 .detail-image img {
   width: 100%;
-  max-height: 560px;
+  max-height: 280px;
   object-fit: contain;
   background: #000000;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid var(--line);
 }
 
@@ -1409,14 +1418,14 @@ footer a:hover {
 
 .about-collage {
   min-width: 0;
-  max-width: 440px;
+  max-width: 280px;
   width: 100%;
   justify-self: end;
 }
 
 .collage-stack {
   position: relative;
-  padding-bottom: 64px;
+  padding-bottom: 48px;
 }
 
 .collage-print {
@@ -1589,7 +1598,8 @@ footer a:hover {
 .travel-media {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 10px;
+  max-width: 280px;
   min-width: 0;
 }
 
@@ -1609,8 +1619,7 @@ footer a:hover {
 
 .travel-media img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
+  max-height: 120px;
   object-fit: cover;
 }
 
@@ -1945,8 +1954,12 @@ main:focus {
     padding-top: 36px;
   }
   .hero-portrait {
-    max-width: 360px;
+    width: 150px;
     margin: 0 auto;
+  }
+  .portrait-frame {
+    width: 150px;
+    height: 165px;
   }
   .featured-project {
     grid-template-columns: 1fr;
@@ -1954,6 +1967,9 @@ main:focus {
   .featured-image {
     border-right: none;
     border-bottom: 1px solid var(--line);
+  }
+  .featured-image img {
+    max-width: 240px;
   }
   .home-projects {
     grid-template-columns: 1fr;
