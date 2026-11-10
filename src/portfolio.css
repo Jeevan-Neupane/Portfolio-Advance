@@ -276,10 +276,10 @@ footer,
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr auto;
-  column-gap: 56px;
+  grid-template-columns: 1.35fr 1fr;
+  column-gap: 48px;
   align-items: center;
-  padding: 56px 0 0;
+  padding: 64px 0 0;
 }
 
 .eyebrow {
@@ -396,16 +396,17 @@ footer,
 }
 
 .hero-portrait {
-  width: 170px;
-  margin: 0;
+  max-width: 290px;
+  width: 100%;
+  margin: 0 0 0 auto;
   position: relative;
 }
 
 .portrait-frame {
-  width: 170px;
-  height: 190px;
   position: relative;
-  border-radius: 10px;
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: var(--surface-card);
@@ -1042,6 +1043,84 @@ footer,
 .post-empty p {
   margin: 0 auto 0 0;
   font-size: 14px;
+}
+
+/* ==========================================================================
+   Programs and Events (Field Notes)
+   ========================================================================== */
+
+.field-notes {
+  margin-top: 56px;
+}
+
+.field-story {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 36px;
+  margin-bottom: 24px;
+  align-items: start;
+}
+
+.field-story h3 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 8px 0 0;
+  color: var(--ink);
+}
+
+.field-story p {
+  font-size: 14px;
+  line-height: 1.65;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+.field-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.field-gallery figure {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.field-gallery a {
+  display: block;
+  overflow: hidden;
+  background: #000000;
+  height: 140px;
+}
+
+.field-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.field-gallery a:hover img {
+  transform: scale(1.03);
+}
+
+.field-gallery figcaption {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--dim);
+  padding: 8px 12px;
+  border-top: 1px solid var(--line);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ==========================================================================
@@ -1954,12 +2033,14 @@ main:focus {
     padding-top: 36px;
   }
   .hero-portrait {
-    width: 150px;
+    max-width: 240px;
+    width: 100%;
     margin: 0 auto;
   }
   .portrait-frame {
-    width: 150px;
-    height: 165px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1.05;
   }
   .featured-project {
     grid-template-columns: 1fr;
@@ -2031,6 +2112,17 @@ main:focus {
     grid-template-columns: 1fr;
     gap: 12px;
   }
+  .field-story {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .field-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .field-gallery a {
+    height: 130px;
+  }
   .travel-story {
     grid-template-columns: 1fr;
   }
@@ -2050,6 +2142,18 @@ main:focus {
 }
 
 @media (max-width: 600px) {
+  .field-gallery {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .field-gallery figure {
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .field-gallery a {
+    height: 150px;
+  }
   .about-facts {
     grid-template-columns: 1fr;
   }
